@@ -1,0 +1,39 @@
+
+#include	<sys/socket.h>
+int socket(int domain, int type, int Protocol);
+
+/* 
+ * protocol通常是0，表示按给定的域和套接字类型选择默认协议。
+ *
+ * SOCK_DGRAM：长度固定的，无连接的不可靠报文传递。与对方通信时不需要逻辑连接
+ * ，只需送出一个报文，地址是一个对方进程所使用的套接字。
+ * SOCK_RAW：IP协议的数据报接口。用于直接访问下面的网络层，需要ROOT权限。
+ * SOCK_SEQPACKET：长度固定、有序、可靠的面向连接的报文传递。顺序数据包。
+ * SOCK_STREAM：有序，可靠、双向的面向连接字节流。应用程序意识不到报文界限。
+ * 
+ * 数据报是一种自包含报文。类似于寄信，可以邮寄很多信，但不能保证投递的次序。
+ * 面向连接的协议通信就像与对方打电话。建立连接后，每个连接是端对端的通信信道
+ * 。会话中不包括地址信息，连接本身暗含特定的源和目的地。
+ */
+
+int shutdown(int sockfd, int how);
+/* 
+ * 如果how是SHUT_RD，则无法从套接字读取数据。
+ * 如果how是SHUT_WR，则无法使用套接字发送数据。
+ * SHUT_RDWR，无法读取和发送。
+ *
+ * close只有在最后一个活动引用被关闭时才释放网络端点。而shutdown允许使一个套接
+ * 一个套接字处于不活动状态，无论引用它的文件描述符数目有多少。
+ */
+
+
+#include	<arpa/inet.h>
+uint32_t htonl(uint32_t hostint32);
+uint16_t htons(uint16_t hostint16);
+uint32_t ntohl(uint32_t netint32);
+uint16_t ntohl(uint16_t netint32);
+
+/* 
+ * struct sockaddr，套接字实现可以自由的添加额外的成员并且定义sa_data成员的大
+ * 成员的大小。
+ */

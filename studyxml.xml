@@ -1,0 +1,115 @@
+
+<!--
+XML(EXtensible Markup Language) 被设计用来传输和存储数据。 其焦点是数据的内容
+没有预定义的标签 。
+XML 被设计用来显示数据，是标记语言，设计宗旨是传输数据。
+XML 被设计为具有自我描述性。另外它是可扩展的。
+
+最好的描述是：
+XML是独立于软件和硬件的信息传输工具。-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE note SYSTEM "Note.dtd">
+<note>  <!--根元素，XML文档必须包含根元素。该元素是所有其它元素的父元素。
+    XML 文档中的元素形成了一颗文档树。-->
+    <to>George</to>
+    <from>John</from>
+    <heading>Reminder</heading>
+    <body>Don't forget the meeting!</body>
+</note>
+
+
+<!-- XML也可拥有属性（名称/值的对）。
+XML的属性值须加引号。
+有5个预定义的实体引用。-->
+&lt; 	< 	小于
+&gt; 	> 	大于
+&amp; 	& 	和号
+&apos; 	' 	单引号
+&quot; 	" 	引号
+
+<!-- XML标签指的是从开始标签直到结束标签的部份 
+     元素可包含其它元素、文本或者两者的混合物，元素也可拥有属性。
+     以下内容只有<book>元素拥有属性(category="CHILDREN") -->
+<bookstore>
+<book category="CHILDREN">
+  <title>Harry Potter</title>
+  <author>J K. Rowling</author>
+  <year>2005</year>
+  <price>29.99</price>
+</book>
+<book category="WEB">
+  <title>Learning XML</title>
+  <author>Erik T. Ray</author>
+  <year>2003</year>
+  <price>39.95</prce>
+</book>
+</bookstore>
+
+<!-- XML命名规则
+     名称不能以数字或者标点符号开始。
+     不能以字符"XML"（或者xml,Xml）开始。
+     名称不能包含空格。 -->
+
+<!-- 良好命名习惯：
+     避免"-"字符，一些软件会认为你要提单词。
+     避免"."字符，会认为后者是前者属性。
+     避免":"字符，命名空间。
+     XML文档常有对应的数据库，其中的字段会对应XML文档中的元素。经验：用数据库的名称规则来命名XML文档中的元素。 -->
+
+<!--属性通常提供不属于数据组成部份的信息。但对需要处理这个元素的软件来说却很重要。属性必须加引号。
+     如果属性值本身包含双引号，有必要用单引号包围它。或者可以实体引用。-->
+<gangster name="George &quot;Shotgun&quot; Ziegler">
+
+<!-- 有时候会向元素分配 ID 引用。这些 ID 索引可用于标识 XML 元素，它起作用的方式与 HTML 中 ID 属性是一样的。这个例子向我们演示了这种情况： -->
+
+<messages>
+  <note id="501">
+    <to>George</to>
+    <from>John</from>
+    <heading>Reminder</heading>
+    <body>Don't forget the meeting!</body>
+  </note>
+  <note id="502">
+    <to>John</to>
+    <from>George</from>
+    <heading>Re: Reminder</heading>
+    <body>I will not</body>
+  </note> 
+</messages>
+
+<!-- 上面的 ID 仅仅是一个标识符，用于标识不同的便签。它并不是便签数据的组成部分。
+
+在此我们极力向您传递的理念是：元数据（有关数据的数据）应当存储为属性，而数据本身应当存储为元素。
+-->
+
+<!-- DTD的作用是定义XML文档的结构，它使用一系列合法的元素来定义文档结构。-->
+
+<!DOCTYPE note [
+    <!ELEMENT note  (to,from,heading,body)>
+    <!ELEMENT to    (#PCDATA)>
+    <!ELEMENT from  (#PCDATA)>
+    <!ELEMENT heading (#PCDATA)>
+    <!ELEMENT body  (#PCDATA)>
+]>
+
+<!-- XSLT (eXtensible Stylesheet Language
+           Transformations)是首选的XML样式表语言。 -->
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml-stylesheet type="text/xsl" href="simple.xsl"?>
+<!--
+href一行把这个XML文件链接到XSL文件。在这个例子中，XSLT转换是由浏览器完成的，
+浏览器读取的是XML文件。
+也可在服务器上进行XSLT转换。-->
+
+<!-- XMLHttpRequest 对象用于在后台与服务器交换数据。
+
+XMLHttpRequest 对象是开发者的梦想，因为您能够：
+
+    在不重新加载页面的情况下更新网页
+    在页面已加载后从服务器请求数据
+    在页面已加载后从服务器接收数据
+    在后台向服务器发送数据
+-->
+
