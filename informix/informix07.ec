@@ -61,6 +61,7 @@ CLASS CODE值首字母    异常代码定义者          说明
 0-4 A-H         X/Open与ANSI/ISO定义    子类代码仍以0-4 A-H开头
 5-9             依定义实现              子类也依定义实现
 I-Z             Informix ESQL/C定义
+I-Z             Informix ESQL/C定义
 
 "IX000"         运行时错误，Informix指定错误消息
 "IX001"         运行时错误，GET DIAGNOSTICS语句错误

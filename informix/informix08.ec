@@ -6,7 +6,7 @@ typedef struct sqlca_s
     char sqlerrm[600]; /* error message parameters */
 #else /* DB2CLI */
     char sqlerrm[72]; /* error message parameters */
-#endif /* DB2CLI */   
+#endif /* DB2CLI */
     char sqlerrp[8];  /* 目前未用 */
     int4 sqlerrd[6];
 		    /* 0 - 返回记录的数目 */

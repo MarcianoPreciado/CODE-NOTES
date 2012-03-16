@@ -14,8 +14,11 @@ END DECLARE SECTION;
  * 现和功能可能会在未来改变，所以要尽量使用ESQL/C函数来读取和改变它的值。 */
 LO-规格结构包含两部份信息：1,磁盘保管信息， 2,创建时间参数
 
+<<<<<<< HEAD
 /* 磁盘保管信息 */
 
+=======
+>>>>>>> ccc18beee2a7ae181a27dde87dd9a700e27ba11c
 预估字节大小        服务器使用这个信息探测对象大小。ifx_lo_specget_estbytes()
                 提供一个优化信息。如果值不符，服务器ifx_lo_specset_estbytes()
                 仍不产生错误，会使用合适的值。
@@ -29,6 +32,7 @@ LO-规格结构包含两部份信息：1,磁盘保管信息， 2,创建时间参
 sbspace的大小   包含smart LO对象的名字，最多18字节  ifx_lo_specget_sbspace()
                                                     ifx_lo_specset_sbspace()
 
+<<<<<<< HEAD
 /*创建时间参数 */
 
 指示类型    创建时间参数        说明
@@ -151,3 +155,6 @@ update catalog set advert = ROW ((SELECT cat_picture::blob
 
 ALTER TABLE catalog modify cat_descr CLOB,
       PUT cat_descr in (sbspc);
+=======
+
+>>>>>>> ccc18beee2a7ae181a27dde87dd9a700e27ba11c
