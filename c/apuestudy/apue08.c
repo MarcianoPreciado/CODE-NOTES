@@ -1,5 +1,41 @@
 /* 第8章：进程控制
  */
+#include <stdio.h>
+#include <unistd.h>
+
+
+int		glob = 6;		/* external variable in initialized data */
+char	buf[] = "a write to stdout\n";
+
+int
+main(void)
+{
+	int		var;		/* automatic variable on the stack */
+	pid_t	pid;
+
+	var = 88;
+	if (write(STDOUT_FILENO, buf, sizeof(buf)-1) != sizeof(buf)-1)
+        perror("fuck write : ");
+	printf("before fork\n");	/* we don't flush stdout */
+
+	if ((pid = fork()) < 0) {
+        perror("fuck fork: ");
+	} else if (pid == 0) {		/* child */
+		glob++;					/* modify variables */
+		var++;
+	printf("pid = %d, glob = %d, var = %d\n", getpid(), glob, var);
+	} else {
+		sleep(2);				/* parent */
+	}
+
+	printf("pid = %d, glob = %d, var = %d\n", getpid(), glob, var);
+	exit(0);
+}
+/* 以上程序如果重定向到文本文件，会打印两次before fuck。因为全缓冲。缓冲区复制
+ * 到了子进程 */
+
+/* fork的一个特性是父进程的所有打开文件描述符都被复制到子进程中。父子进程每个
+ * 相同的打开描述符共享一个文件表项 */
 
 /* 父进程设置的文件锁不会被子进程继承
  * 子进程的未处理的闹钟(alarm)被清除
@@ -9,8 +45,9 @@
 /*
  * vfork创建子进程的目的是exec一个新程序，并不将父进程的地址空间完全复制到子进程中。
  * 子进程调用exec或exit之前，它在父进程的地址空间中运行。
- * vfork区别于fork：vfork确保子进程先运行，在它调用exec或exit之后父进程才可能被调度运行。
- * 如果在调用这两个函数之前子进程依赖于父进程的进一步动作，则会导致死锁。
+ * vfork区别于fork：vfork确保子进程先运行，在它调用exec或exit之后父进程才可能
+ * 被调度运行。如果在调用这两个函数之前子进程依赖于父进程的进一步动作，则会导
+ * 致死锁。
  */
 
 /* _exit并不执行标准I/O缓冲的冲洗操作。
@@ -18,14 +55,13 @@
  * vfork中，如果子进程调用exit，则该程序的输出是不确定的，它依赖于标准I/O库的实现。
  * 情况1：exit实现冲洗所有标准I/O流，如果这是函数唯一的动作，那么输出与
  * 子进程调用_exit完全相同。
- * 情况2：如果该实现也关闭标准I/O流，那么表示标准输出FILE对象的相关存储区会被清0。
- * 因为子进程借用了父进程的地址空间，所以父进程恢复运行并调用printf时，也就不会产生任何输出。
+ * 情况2：如果该实现也关闭标准I/O流，那么表示标准输出FILE对象的相关存储区会被
+ * 清0。因为子进程借用了父进程的地址空间，所以父进程恢复运行并调用printf时，也
+ * 就不会产生任何输出。
  *
  *
- *
- *
- * 大多数exit的现代实现不再关闭流，因为进程即将终止，那时内核将关闭在进程中哦
-进程中已打开的所有文件描述符，在库中关闭他们。比如Linux
+ * 大多数exit的现代实现不再关闭流，因为进程即将终止，那时内核将关闭在进程中已
+ * 打开的所有文件描述符，在库中关闭他们。比如Linux
 
 课后题8.1我不明白，为什么fclose(stdout)可行，而close(STDOUT_FILENO)不可行。
 */
@@ -36,28 +72,32 @@
  * 释放它仍占用的资源）的进程被称为僵死进程。
  */
 
-#include	<sys/wait.h
+/* 当一个进程正常或异常终止时，内核就向其父进程发送SIGCHLD信号。
+ * 在UNP一书中，为避免同时处理多个结束请求的子进程产生错误，会设置SIGCHLD信号
+ * 捕捉为WAITPID NOHANG 循环。*/
+
+#include	<sys/wait.h>
 pid_t wait(int *statloc);
 pid_t waitpid(pid_t pid, int *statloc, int options);
 /* 如果成功返回则返回进程ID，0。如果出错则返回-1。
  * pid = -1，等待任一子进程。
  * pid > 0，等待其进程ID与pid相等的子进程。
  * pid = 0，等待其组ID等于调用进程组ID的任一子进程。
- * pid = -1,等待其组ID等于pid绝对值的任一子进程。
+ * pid < -1,等待其组ID等于pid绝对值的任一子进程。
  *
  * options常量：
- * 1，WCONTINUED 	若实现作业控制，如果PID指定的任意子进程在暂停后已经继
-已经继续，但其状态尚未报告，则返回其状态。
- * 2，WNOHANG 		若由PID指定的子进程并不是立即可用的，则waitpid不阻塞，
- * 其返回值为0。
- * 3，WUNTRACED 	若某实现支持作业控制，而由pid指定的任一子进程已处于暂
- *暂停状态，并且自暂停状态以来还未报告过，则返回其状态。
- * * */
+ * 1，WCONTINUED 	若实现作业控制，如果PID指定的任意子进程在暂停后已经继续但
+ * 其状态尚未报告，则返回其状态 。
+ * 2，WNOHANG 		若由PID指定的子进程并不是立即可用的，则waitpid不阻塞，其返回值为0。
+ * 3，WUNTRACED 	若某实现支持作业控制，而由pid指定的任一子进程已处于暂停状
+ * 态，并且自暂停状态以来还未报告过，则返回其状态。*
+ */
 
+/* 检查返回状态的宏 */
 WIFEXITED(status)        /* 若为正常终止子进程返回的状态则为真，
 			    可执行WEXITSTATUS(status)来获取子进程传给exit族参数的低8位 */
 WIFSIGNALED(status)      /* 异常终止状态宏测试。WTERMSIG(status)  WCOREDUMP(status)  */
-WIFSTOPPED(status)       /* 暂停子进程返回的状态，WSTOPSIG(status)*/
+WIFSTOPPED(status)       /* 当前暂停子进程返回的状态，WSTOPSIG(status)*/
 WIFCONTINUED(status)     /* 作业控制暂停后已经继续的子进程反回状态。 */
 
 #include <sys/types.h>
@@ -84,9 +124,12 @@ int execle(const char *path, const char *arg,
            ..., char * const envp[]);
 int execv(const char *path, char *const argv[]);
 int execvp(const char *file, char *const argv[]);
-int execve(const char *path, char *const argv[], char * const envp[]); /* 只有execve是内核系统调用，其它都是库函数 */
+int execve(const char *path, char *const argv[], char * const envp[]);
+/* 只有execve是内核系统调用，其它都是库函数 */
 /* 若函数执行出错返回-1，否则不返回值。
  *
+ * 调用exec族函数并不创建新进程，进程ID不变。只是用一个全新程序替换了当前进程
+ * 的正文、数据、堆和段。
  * execl、execlp、execle着三个函数表示命令行参数的一般方法是：
  * char *arg0, char *arg1, ..., (char *) 0;
  * 如果用常数0表示一个空指针，必须将它强制转换为一个字符指针，否则将它解释为
@@ -152,8 +195,10 @@ int seteuid(uid_t uid);
 int setegid(uid_t uid);
 
 /* 改变用户ID的规则：
- * 若用户具有超级用户特权，则setuid函数将实际用户ID，有效用户ID以及保存的设置用户ID均设置为uid。
- * 若进程没有超级用户特权，但是uid等于实际用户ID或保存的设置用户id，则setuid将有效用户ID设置为uid，不改变实际用户ID和保存的设置用户ID。
+ * 若用户具有超级用户特权，则setuid函数将实际用户ID，有效用户ID以及保存的设置
+ * 用户ID均设置为uid。
+ * 若进程没有超级用户特权，但是uid等于实际用户ID或保存的设置用户id，则setuid将
+ * 有效用户ID设置为uid，不改变实际用户ID和保存的设置用户ID。
  * 如果以上两个条件都不满足，则将errno设置为EPERM，并返回-1。
  */
 

@@ -1,12 +1,12 @@
 第4章： 文件和目录
 
-#include	<stat.h>
+#include	<sys/stat.h>
 
 int stat(char *restrict pathname, struct stat *restrict buf);
 int fstat(int filedes, struct stat *buf);
 int lstat(const char *restrict pathname, struct stat *restrict buf);
 
-/* lstat类似于stat，但是当命名的文件是一个符号链接时，lastat返回符号链接本身，
+/* lstat类似于stat，但是当命名的文件是一个符号链接时，lstat返回符号链接本身，
  * stat返回该符号链接所引用的文件信息。
  */
 
@@ -42,7 +42,7 @@ S_ISSOCK()                                      /* 套接字 */
  * 2，新文件的组ID可以是它所在目录的组ID，FreeBSD和MAC总是如此。
  * Linux和Solaris下，如果目录的设置组id已经设置，则将新文件的组ID设置为目录的组ID，否则将其设为进程的有效组ID。
  *
- * access函数是按实际用户ID和实际组ID进行访问权限测试的。
+ * access函数是按实际用户ID和实际组ID进行访问权限测试的。R_OK,W_OK,X_OK,F_OK
  * sys/stat.h 为了改变一个文件的权限位(chmod fchmod)，进程的有效用户ID必须等于文件的所有者ID，或者该进程必须具有超级用户权限。
  *
  */
@@ -90,3 +90,17 @@ int utime(const char *pathname, const struct utimbuf *times);
  * 特殊文件才有st_rdev值。此值包含实际设备的设备号。
  * major minor两个宏来访问主、次设备号。
  */
+
+#include <dirent.h>
+
+DIR *opendir(const char *pathname);
+struct dirent *readdir(DIR *dp);                /* 出错或到结尾返回NULL */
+void rewinddir(DIR *dp);
+int closedir(DIR *dp);
+long telldir(DIR *dp);
+void seekdir(DIR *dp, long loc);
+
+#include <unistd.h>
+int chdir(const char *pathname);
+int fchdir(int filedes);
+char *getcwd(char *buf, size_t size);           /* 返回绝对路径 */

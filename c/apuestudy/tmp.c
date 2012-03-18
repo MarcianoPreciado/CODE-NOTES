@@ -1,54 +1,9 @@
+#include <stdio.h>
+#include <wchar.h>
 
-#include	<stdio.h>
-#include	<string.h>
-#include	<stdlib.h>
-#include	<unistd.h>
-#include	<sys/wait.h>
-
-int main(int argc, char *argv[])
+int main(void)
 {
-        int n;
-        int fd[2];
-        pid_t pid;
-        char line[4096];
-        FILE *fp;
-
-        if ((fp = fopen(argv[1], "rb")) == NULL) {
-                perror("can't open file");
-        }
-        if (pipe(fd) < 0) {
-                perror("pipe create error");
-        }
-
-        if ((pid = fork()) < 0) {
-                printf("never");
-        } else if (pid > 0) {
-                close(fd[0]);
-                while (fgets(line, 4096, fp) != NULL) {
-                        n = strlen(line);
-                        write(fd[1], line, n);
-                }
-                if (ferror(fp)) {
-                        perror("ferror fp");
-                }
-
-                close(fd[1]);
-
-                if (waitpid(pid, NULL, 0) < 0) {
-                        exit(13);
-                }
-                exit(0);
-        } else {
-                close(fd[1]);
-                if (fd[0] != STDIN_FILENO) {
-                        dup2(fd[0], STDIN_FILENO);
-                        close(fd[0]);
-                }
-
-
-                if (execl("/bin/more", "more", argv[1], (char *)0) < 0 ) {
-                        perror("fuck execl");
-                }
-                return 0;
-        }
+    int err = fwide(stdin, 0);
+    printf("%d\n",err);
+    return 0;
 }

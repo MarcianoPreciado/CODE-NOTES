@@ -11,14 +11,16 @@ main(void)
 
 	var = 88;
 	if (write(STDOUT_FILENO, buf, sizeof(buf)-1) != sizeof(buf)-1)
-		err_sys("write error");
+        perror("fuck write : ");
 	printf("before fork\n");	/* we don't flush stdout */
 
 	if ((pid = fork()) < 0) {
-		err_sys("fork error");
+        perror("fuck fork: ");
 	} else if (pid == 0) {		/* child */
 		glob++;					/* modify variables */
 		var++;
+	printf("pid = %d, glob = %d, var = %d\n", getpid(), glob, var);
+    _exit(0);
 	} else {
 		sleep(2);				/* parent */
 	}

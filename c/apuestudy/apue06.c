@@ -3,6 +3,7 @@
 
 //vipw命令允许管理员使用该命令编辑口令文件。
 
+#include	<pwd.h>
 struct passwd {
         char *pw_name;          /* Username.  */
         char *pw_passwd;        /* Password.  */
@@ -13,7 +14,6 @@ struct passwd {
         char *pw_shell;         /* Shell program.  */
 };
 
-#include	<pwd.h>
 struct passwd *getpwuid(uid_t uid);
 struct passwd *getpwnam(const char *name);
 
@@ -66,9 +66,12 @@ void endgrent(void);
 
 #include	<unistd.h>
 #include	<grp.h>
-// getgroups将各附加组ID填写到数组grouplist中，元素最多为gidsetsize个。实际填写到数组中的附加组id数目由函数返回，如果出错返回-1。
-// 作为一个特例，若gidsetseize为0，函数只返回附加组id数目，对数组grouplist不作修改。这样可以确定数组grouplist的长度。
 
+/*  getgroups将各附加组ID填写到数组grouplist中，元素最多为gidsetsize个。实际填
+ *  写到数组中的附加组id数目由函数返回，如果出错返回-1。作为一个特例，若
+ *  gidsetseize为0，函数只返回附加组id数目，对数组grouplist不作修改。这样可以
+ *  确定数组grouplist的长度。
+ */
 int getgroups(int gidsetsize, gid_t grouplist[]);
 
 int setgroups(int ngroups, const gid_t grouplist[]); /* 特权操作,ngroups的值不能大于NGROUP_MAX */
@@ -81,7 +84,8 @@ utmp文件记录当前登录进系统的各个用户；wtmp文件，跟踪各个
 
 #include	<time.h>
 time_t time(time_t *calptr);
-int gettimeofday(struct timeval *restrict tp, void *restrict tzp); /* 总是返回0值，SUS中，tzp唯一合法值为NULL。 */
+int gettimeofday(struct timeval *restrict tp, void *restrict tzp);
+/* gettimeofday() 总是返回0值，SUS中，tzp唯一合法值为NULL。 */
 
 struct timeval {
         time_t tv_sec;
@@ -108,8 +112,8 @@ struct tm {
 #endif
 };
 
-struct tm *gmtime(const time_t *calptr); /* TZ,localtime */
-struct tm *localtime(const time_t *calptr); /* UTC time */
+struct tm *gmtime(const time_t *calptr); /* UTC time */
+struct tm *localtime(const time_t *calptr); /* TZ, local time */
 
 time_t mktime(struct tm *tmptr); /* TZ,local time */
 
