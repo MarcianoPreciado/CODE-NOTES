@@ -233,8 +233,8 @@ system()在实现中调用了fork, exec, waitpid，因此有三种返回值。
  * 行此实例，经ubuntu 11.04 bash4.28实测，否定，不知原因???*/
 
 /* 如果一个进程正以特殊的权限运行，它又想生成另一个进程执行另一个程序，则它应
- *应当直接fork和exec，且在fork后、exec之前改回普通用户权限。设置用户ID和设置组
- ID程序绝不应当调用system函数*/
+ * 应当直接fork和exec，且在fork后、exec之前改回普通用户权限。设置用户ID和设置组
+ * ID程序绝不应当调用system函数*/
 
 /* 进程时间：
  *
@@ -251,5 +251,4 @@ struct tms {
 };
 
 clock_t times(struct tms *buf);
-
 

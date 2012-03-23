@@ -13,6 +13,16 @@
  * 号的定义不明确，最好使用sigaction函数。
  */
 
+/* SIGHUP信号：
+ * 如果终端接口检测到一个连接断开，则将此信号发送给与终端相关的控制进程（会话
+ * 首进程）。
+ * 接到此信号的会话首进程可能在后台，有别于中断、挂起和退出。后者信号总传递给
+ * 前台进程组。
+ * 如果会话首进程终止，则也产生此信号。这种情况下，此信号被发送给前台进程组中
+ * 的每一个进程。*/
+
+/* SIGSTSTP信号：
+ * 交互式停止信号。CTRL+Z */
 
 #include	<signal.h>
 
@@ -51,7 +61,7 @@ if (signal(SIGINT, SIG_IGN) != SIG_IGN)
  * 不可重入函数原因：
  * 1，已知它们使用静态数据结构。
  * 2，它们调用malloc 或 free
- * 3，他们是标准I / O函数。
+ * 3，他们是标准I/O函数。
  * 各种wait函数都能改变errno值。
  */
 
@@ -59,8 +69,7 @@ if (signal(SIGINT, SIG_IGN) != SIG_IGN)
  * 僵死进程。(FreeBSD除外）
  *
  * 在产生了信号时，内核通常在进程表中设置一个某种形式的标志——递送。
- * 在信号产生 (generation) 和递送 (delivery)之间的时间间隔内，我们称信号是味觉
- 未决的 (pending) 。
+ * 在信号产生 (generation) 和递送 (delivery)之间的时间间隔内，我们称信号是未决的(pending)
  *
  * 内核在递送一个原来被阻塞的信号给进程时（而不是在产生该信号时），才决定对他
  对它的处理方式。
@@ -68,10 +77,9 @@ if (signal(SIGINT, SIG_IGN) != SIG_IGN)
  *
  */
 
-
 #include	<signal.h>
 int kill(pid_t pid, int signo);
-int raise(int signo);
+int raise(int signo);                           /* 成功返回0,否则返回-1 */
 /*
  * kill的pid参数：
  * pid > 0 	将该信号发送给进程ID为pid的进程
@@ -89,7 +97,9 @@ unsigned int alarm(unsigned int seconds);
  * 每个进程只能有一个闹钟时间。
  */
 
-int pause(void);   /* 只有执行了一个信号处理程序并返回时才返回，值为-1，并将errno设置为EINTR。*/
+int pause(void);
+/* 使调用进程挂起直至捕捉到一个信号。
+ * 只有执行了一个信号处理程序并返回时才返回，值为-1，并将errno设置为EINTR。*/
 
 /* 信号处理程序中，如果该信号中断了其他信号处理程序，且使用longjump避免信号与
  * pause等的竞争条件，则有可能会提早终止其他信号处理程序。
@@ -108,4 +118,11 @@ int sigprocmask(int how, sigset_t *restrict set, sigset_t *restrict oset);
  * sigprocmask仅为单线程的进程定义。
  */
 
+#include <signal.h>>
+int sigemptyset(sigset_t *set);
+int sigfillset(sigset_t *set);
+int sigaddset(sigset_t *set, int signo);
+int sigdelset(sigset_t *set, int signo);        /* 以上函数，成功0,否则-1 */
+int sigismember(const sigset_t *set, int signo); /* 若真1,假0,出错-1 */
 
+int sigpending(sigset_t *set); /* 返回当前阻塞而不能递送的信号集，即未决信号集 */

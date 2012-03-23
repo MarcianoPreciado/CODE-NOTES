@@ -4,7 +4,7 @@
  *函数，从而在运行时确定是否支持线程。*/
 
 #include	<pthread.h>
-int pthread_equal(ptrread_t tid1, pthread_t tid2);
+int pthread_equal(ptrread_t tid1, pthread_t tid2); /* 不想等的话返回0值 */
 pthread_t pthread_self(void);
 
 /* 在POSIX线程的情况下，程序开始运行时，它也是以单进程中的单个控制线程启动的。
