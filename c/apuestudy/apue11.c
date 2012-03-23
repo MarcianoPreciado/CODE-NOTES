@@ -4,18 +4,21 @@
  *函数，从而在运行时确定是否支持线程。*/
 
 #include	<pthread.h>
-int pthread_equal(ptrread_t tid1, pthread_t tid2); /* 不想等的话返回0值 */
+int pthread_equal(pthread_t tid1, pthread_t tid2); /* 不想等的话返回0值 */
 pthread_t pthread_self(void);
 
 /* 在POSIX线程的情况下，程序开始运行时，它也是以单进程中的单个控制线程启动的。
  */
 
-pthread_creat(pthread_t *restrict tidp, const pthread_attr_t *restrict attr,
+int pthread_creat(pthread_t *restrict tidp, const pthread_attr_t *restrict attr,
               void *(*start_rtn)(void *), void *restrict arg); /* void *，可传结构 */
-/* 新创建的线程可以放问进程的地址空间，并且继承调用线程的浮点环境和信号屏蔽字
- * ，但是该线程的未决信号集将被清除。
+/* 新创建的线程可以访问进程的地址空间，并且继承调用线程的浮点环境和信号屏蔽字，
+ * 但是该线程的未决信号集将被清除。
  * 注意：pthread函数在调用失败时通常会返回错误码。
  * 每个线程都提供errno的副本，这只是为了与使用errno的现有函数兼容。
+ *
+ * 注意：pthread函数在调用失败时通常会返回错误码，它们并不像其他POSIX函数一样
+ * 设置errno。
  */
 
 /* 单个线程在不终止进程（exit）的情况下，可有3种办法停止它的控制流，退出：
@@ -26,22 +29,23 @@ pthread_creat(pthread_t *restrict tidp, const pthread_attr_t *restrict attr,
 void pthread_exit(void *rval_ptr);        /* rval为无类型指针。 */
 
 int pthread_join(pthread_t thread, void **rval_ptr);
-/* 调用进程将一直阻塞，直到指定的线程调用pthread_exit，从启动例程中返回或者被取消。
+/* 调用线程将一直阻塞，直到指定的线程调用pthread_exit，从启动例程中返回或者被取消。
  * 如果线程被取消，用rval_ptr指定的内存单元就被置为PTHREAD_CANCELED.
  * 函数调用成功则返回0，否则返回错误编号。
  *
  * 例如线程函数 return (void *)1, pthread_exit((void *)2);
- * 其他线程可以调用int *tret, pthread_join(&(tret))获取已终止线程的退出码，可用printf (int)tret打印出来。
- * 也可以返回结构，但注意结构使用的内存在调用者完成调用以后必须仍然是有效的。
+ * 其他线程可以调用int *tret, pthread_join(&(tret))获取已终止线程的退出码，可
+ * 用printf (int)tret打印出来。也可以返回结构，但注意结构使用的内存在调用者完
+ * 成调用以后必须仍然是有效的。
  */
 int pthread_cancel(pthread_t tid);              /* 请求取消同一进程中的其他线程。 */
 
 void pthread_cleanup_push(void (*rtn)(void *), void *arg);
 void pthread_cleanup_pop(int execute);
-/* 如果把execute参数设置为0，清理函数将不被调用。无论何种情况，
- * pthread_cleanup_pop都将删除上次push调用建立的清理处理程序。
+/* 如果把execute参数设置为0，清理函数将不被调用。
+ * 无论何种情况，pthread_cleanup_pop都将删除上次push调用建立的清理处理程序。
  * 这里，APUE中文版中介绍的不全，当调用pthread_exit或其他线程调用
- * pthread_cancel取消该进程时，pthread_clennup_pop自动执行清理函数。
+ * pthread_cancel取消该进程时，pthread_clennup_pop才自动执行清理函数。
  */
 
 int pthread_detach(pthread_t tid);               /* 使线程进入分离状态 */
@@ -60,7 +64,9 @@ int pthread_mutex_lock(pthread_mutext_t *mutex);
 int pthread_mutex_trylock(pthread_mutext_t *mutex);
 int pthread_mutex_unlock(pthread_mutext_t *mutex);
 
-/* 死锁原因：对同一个互斥量加锁两次，两个线程都在相互请求对另一个线程拥有的资源等等。
+/* 死锁原因：对同一个互斥量加锁两次，
+ * 或两个线程都在相互请求对另一个线程拥有的加锁资源等等。
+ *
  * 一个线程试图以与另一个线程相反的顺序锁住互斥量，才能出现死锁。
  * 如果锁的粒度太粗，就会出现很多线程阻塞等待相同的锁，源自并发性的改善微乎其微。
  * 如果锁得粒度太细，那么过多的锁开销会使系统性能受到影响。
