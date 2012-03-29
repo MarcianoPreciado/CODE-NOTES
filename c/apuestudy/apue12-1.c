@@ -34,6 +34,8 @@ int pthread_attr_getguardsize(const pthread_attr_t *restrict attr,
                               size_t *restrict guardsize);
 int pthread_attr_setguardsize(pthread_attr_t *attr, size_t guardsize);
 
+/* 如果操作系统的实现让用户级线程到内核级线程或进程之间的映射关系是一对一的话
+ * ，那么在给定时间内增加可运行的用户级线程数，可能会改善性能。*/
 int pthread_getconcurrency(void); /* 返回当前并发度，如果操作系统正控制着并发
 				     度（即之前没有调用过pthread_setconcureency函数），则返回0 */
 int pthread_setconcureency(int level);          /* level为0的话，撤销之前set所产生的作用 */
@@ -43,10 +45,12 @@ int pthread_mutexattr_destroy(pthread_mutexattr_t *attr);
 
 /* 进程共享属性：
  *
- * _SC_THREAD_PROCESS_SHARED传给sysconf检查平台是否支持进程共享这个属性。
  * 在进程中，多个线程可以访问同一个同步对象，默认行为。互斥量属性为PTHREAD_PROCESS_PRIVATE。
+ * 可将_SC_THREAD_PROCESS_SHARED传给sysconf检查平台是否支持进程共享这个属性。
+ *
  * 相互独立的多个进程可以把同一个内存区域映射到各自独立的地址空间。这时，多个
- 多个进程访问共享数据通常也需要同步。如果进程共享互斥量属性设为PTHREAD_PROCESS_SHARED，从多个进程共享的内存区域中分配的互斥量就可以用于这些进程的同步。
+ 进程访问共享数据通常也需要同步。如果进程共享互斥量属性设为PTHREAD_PROCESS_SHARED，
+ 从多个进程共享的内存区域中分配的互斥量就可以用于这些进程的同步。
  */
 int pthread_mutexattr_getpshared(const pthread_mutexattr_t *restrict attr,
                                  int *restrict pshared);
@@ -108,20 +112,21 @@ int pthread_condattr_setpshared(pthread_condattr_t *attr, int pshared);
 
 
 /* 如果一个函数在同一时刻可以被多个线程安全地调用，就称该函数是线程安全的。
- * 如果一个函数对多个线程来说是可重入的，则说这个函数是线程安全的。但并不能但
- * 但并不能说明对信号处理程序来说该函数也是可重入的。如果函数对异步信号处理程
- * 程序的重入是安全地，那么就可以说函数是 异步-信号 安全地。
+ * 如果一个函数对多个线程来说是可重入的，则说这个函数是线程安全的。但并不能说
+ * 明对信号处理程序来说该函数也是可重入的。
+ * 如果函数对异步信号处理程程序的重入是安全地，那么就可以说函数是 异步-信号 安全的。
  */
-/* 以线程安全的方式干里FILE对象的方法。 */
+/* 以线程安全的方式管理FILE对象的方法。
+ * 这个锁是递归的。*/
 
 int ftrylockfile(FILE *fp);
 void flockfile(FILE *fp);
 void funlockfile(FILE *fp);
 
-/* 进程中的所有线程都可以访问进程的整个地址空间。除了使用寄存器以外，线程没有
+/* 进程中的所有线程都可以访问进程的整个地址空间。除了使用寄存器以外，
  * 线程没有办法阻止其他线程访问它的数据，线程私有数据也不例外。
  * 虽然底层的实现部份不能阻止这种访问能力，但管理线程私有数据的函数可以提高线
- * 程间的数据独立数据独立性。
+ * 程间的数据独立性。
  */
 
 int pthread_key_create(pthread_key_t *keyp, void (*destructor)(void *));
@@ -134,6 +139,9 @@ int pthread_key_delete(pthread_key_t *key);
 /* 取消键与线程私有数据值之间的关联
  * 注意：调用pthread_key_delete并不会激活与key相关联的析构函数*/
 
+/* 如果每个线程都调用pthread_once，系统就能保证初始化例程initfn只被调用一次。
+ * 避免创建键时或其他操作出现竞争。
+ */
 pthread_once_t initflag = PTHREAD_ONCE_INIT;  /* initflag必须是全局或静态变量 */
 int pthread_once(pthread_once_t *initflag, void (*initfn)(void));
 
@@ -146,7 +154,6 @@ int pthread_setspecific(pthread_key_t key, const void *value);
  * PTHREAD_CANCEL_ENABLE, PTHREAD_CANCEL_DISABLE，PTHREAD_CANCEL_ASYNCHRONOUS,
  * PTHREAD_CANCEL_DEFERRED。使用异步取消时，线程可在任意时间取消。
  */
-
 int pthread_setcancelstate(int state, int *oldstate);
 /* 原子操作。
  * 在默认情况下，线程在取消请求发出后还是继续运行，直到线程到达某个取消点。

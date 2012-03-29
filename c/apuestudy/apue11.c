@@ -84,9 +84,15 @@ int pthread_rwlock_destroy(pthread_rwlock_t *rwlock);
 int pthread_rwlock_rdlock(pthread_rwlock_t *rwlock);
 int pthread_rwlock_wrlock(pthread_rwlock_t *rwlock);
 int pthread_rwlock_unlock(pthread_rwlock_t *rwlock);
+/* 在实现读写锁的时候可能会对共享模式下可获取的锁的数量进行限制，所以需要检查
+ * pthread_rwlock_rdlock的返回值。
+ */
 
+int pthread_rwlock_tryrdlock(pthread_rwlock_t *rwlock);
+int pthread_rwlock_trywrlock(pthread_rwlock_t *rwlock); /* 成功返回0,否则EBUSY */
 
-/* 条件变量与互斥量一起使用时，允许线程以无竞争的方式等待特定的条件发生。
+/* 条件变量给多个线程提供了一个会合的场所。
+ * 条件变量与互斥量一起使用时，允许线程以无竞争的方式等待特定的条件发生。
  * 线程在改变条件状态前必须首先锁住互斥量，其他线程在获得互斥量之前不会察觉到
  * 这种改变。
  *
@@ -98,8 +104,16 @@ int pthread_cond_init(pthread_cont_t *restrict cond,
 
 int pthread_cond_destroy(pthread_cond_t *cond);
 
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  pthread_cond_wait
+ *  Description:  把调用线程放到等待条件的线程列表上，然后对互斥量进行解锁，这
+ *  两个操作是原子操作。
+ *  pthread_cond_wait返回时，互斥量再次被锁住。
+ * =====================================================================================
+ */
 int pthread_cond_wait(pthread_cond_t *restrict cond,
-                      pthread_mutex_t *restrict mutex); /* 原子操作 */
+                      pthread_mutex_t *restrict mutex);
 
 int pthread_cond_timedwait(pthread_cond_t *restrict cond,
                            pthread_mutex_t *restrict mutex,
