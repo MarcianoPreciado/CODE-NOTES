@@ -70,6 +70,7 @@ data type needs to avoid truncation */
  */
 如果你不指定lvarchar宿主变量的大小，它等同于一字节的char类型。
 如果指定size，等同于C语言同等大小的CHAR类型。
+在定义SQL类型LVARCHAR到ESQL/C类型lvarchar或char时，size值要加1,以存放终结字符。
 如果lvarchar宿主变量是一个指针，指针指向的数据最大可以2GB。
 lvarchar类型设计为当你insert和select用户自定义或不明类型时，可以表现为字符串格
 式。必须使用 ifx_var() 函数操作lvarchar指针。
@@ -97,7 +98,7 @@ lvarchar类型设计为当你insert和select用户自定义或不明类型时，
  */
 
 /* 以by函数开头的函数操作和返回fixed-length字符串。
- * 以rst和st（除了stchar)开头的函数，操作或返回终结符结尾的字符串。
+ * 以rst和st（除了stchar)开头的函数，操作均返回终结符结尾的字符串。
  * rdownshit和rupshit操作有终结符的字符串，但是不返回值。
  */
 
@@ -105,7 +106,7 @@ Function Name   Description
 bycmpr()        Compares two groups of contiguous bytes B-10
 bycopy()        Copies bytes from one area to another B-12
 byfill()        Fills an area you specify with a character B-13
-byleng()        Counts the number of bytes in a string B-14
+byleng()        Counts the number of bytes in a string B-14 不统计结尾空白符
 ldchar()        Copies a fixed-length string to a null-terminated string B-170
 rdownshift()    Converts all letters to lowercase B-176
 rstod()         Converts a string to a double value B-200
@@ -113,7 +114,7 @@ rstoi()         Converts a string to a short integer value B-201
 rstol()         Converts a string to a 4-byte integer value B-202
 rupshift()      Converts all letters to uppercase B-209
 stcat()         Concatenates one string to another B-232
-stchar()        Copies a null-terminated string to a fixed-length string B-233
+stchar()        Copies a null-terminated string to a fixed-length string 填充空白
 stcmpr()        Compares two strings B-234
 stcopy()        Copies one string to another string B-235
 stleng()        Counts the number of bytes in a string B-235

@@ -17,6 +17,7 @@ EXEC SQL insert into table2 values (:id, :my_boolflag); /* inserts TRUE*/
 
 rsetnull(CBOOLTYPE, (char *) &flag); /* valid BOOLEAN assignment to NULL */
 
+EXEC SQL include decimal;
 /* DECIMAL(p)浮点和DECIMAL(p,n)定点。后者是ANSI SQL标准。*/
 
 #define DECSIZE 16
@@ -45,8 +46,8 @@ deccvasc()      Converts a C char type value to a decimal type value
 deccvdbl()      Converts a C double type value to a decimal type value
 deccvint()      Converts a C int type value to a decimal type value
 deccvlong()     Converts a C 4-byte integer type value to a decimal type value
-dececvt()       Converts a decimal value to an ASCII string B-28
-decfcvt()       Converts a decimal value to an ASCII string B-28
+dececvt()       Converts a decimal value to an ASCII string 类似于ecvt(3)
+decfcvt()       Converts a decimal value to an ASCII string fcvt(5)
 dectoasc()      Converts a decimal type value to an ASCII string
 dectodbl()      Converts a decimal type value to a C double type value
 dectoint()      Converts a decimal type value to a C int type value

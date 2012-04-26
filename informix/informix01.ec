@@ -50,8 +50,8 @@ export GL_DATE DATETIME
 覆盖现有数据库。不带-i选项则不覆盖。
 */
 
-/* 因为esql与C都将'\'作为转义字符，且依次进过esql、c处理。所以如要查找字符串 "\"
- * （3字节）的话，应当使用 */
+/* 因为esql与C都将'\'作为转义字符，且依次经过esql、c处理。所以如要查找字符串 "\"
+ * （3字节）的话，应当使用: */
 EXEC SQL SELECT col1 FROM tab1 WHERE col1 = ’\"\\\\\"’;
 
 /* 默认不允许在字符串类型中加入换行符
@@ -69,7 +69,7 @@ EXEC SQL END DECLARE SECTION;
  * 在ESQL/C中，变量类型，宿主变量区分大小写。单SQL关键字、语句表示符和游标名
  * 不区分大小写。
  *
- * 定义宿主变量作为参数。
+ * 定义宿主变量作为参数：
  * 宿主变量是你在嵌入式SQL中使用的ESQL/C和C变量。SELECT 。。INTO :hostvar1,
  * :hostvar2，如果省略掉hostvar1和hostvar2之间的逗号，hostvar2就作为hostvar1的指
  * 示变量。
@@ -113,8 +113,8 @@ $hostvar $indvar
  */
 /* Make sure to terminate the line of code with a semicolon. Some additional
 examples follow: ESQL/C头文件不必以.h结尾。*/
-EXEC SQL include varchar.h;
-EXEC SQL include sqlda;
+EXEC SQL INCLUDE varchar.h;
+EXEC SQL INCLUDE sqlda;
 $include sqlstype;
-EXEC SQL include "C:\apps\finances\credits.h"; /*fullpath头文件用双引号括起来 */
+EXEC SQL INCLUDE "C:\apps\finances\credits.h"; /*fullpath头文件用双引号括起来 */
 
