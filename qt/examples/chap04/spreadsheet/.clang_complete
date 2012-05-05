@@ -1,0 +1,15 @@
+-I.
+-I/usr/include/qt4/QtUiTools
+-I/usr/include/qt4/QtCore
+-I/usr/include/qt4/QtGui
+-I/usr/include/qt4/QtXml
+-I/usr/include/qt4/QtScript
+-I/usr/include/qt4
+-D_REENTRANT
+-DQT_WEBKIT
+-DQT_NO_DEBUG
+-DQT_SCRIPT_LIB
+-DQT_XML_LIB
+-DQT_GUI_LIB
+-DQT_CORE_LIB
+-DQT_SHARED
