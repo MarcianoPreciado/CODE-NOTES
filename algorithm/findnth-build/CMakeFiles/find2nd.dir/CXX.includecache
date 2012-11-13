@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sd44/code/algorithm/find2nd/find2nd.cpp
+iostream
+-
+find2nd.h
+/home/sd44/code/algorithm/find2nd/find2nd.h
+
+/home/sd44/code/algorithm/find2nd/find2nd.h
+iostream
+-
+

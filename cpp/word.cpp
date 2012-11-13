@@ -38,7 +38,8 @@ int main(void)
         for (vector<string>::const_iterator iter = fuckword.begin(); iter != fuckword.end(); iter++) {
                 cout << *iter << endl;
         }
-
+string ss;
+ss.swap(sss);
         return 0;
 }
 

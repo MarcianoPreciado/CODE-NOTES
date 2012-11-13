@@ -1,0 +1,173 @@
+%% start of file `template-zh.tex'.
+%% Copyright 2006-2012 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}   % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+%\usepackage{zhfontcfg}
+\usepackage[nospace,BoldFont,SlantFont,fallback,CJKnumber]{xeCJK}
+
+% moderncv 主题
+\moderncvstyle{casual}                        % 选项参数是 ‘casual’, ‘classic’, ‘oldstyle’ 和 ’banking’
+\moderncvcolor{blue}                          % 选项参数是 ‘blue’ (默认)、‘orange’、‘green’、‘red’、‘purple’ 和 ‘grey’
+%\nopagenumbers{}                             % 消除注释以取消自动页码生成功能
+
+% 字符编码
+\usepackage[utf8]{inputenc}                   % 替换你正在使用的编码
+
+% 将系统字体名映射为逻辑字体名，为了维护方便。
+\newcommand\fontnamehei{WenQuanYi Micro Hei}
+\newcommand\fontnamezhei{WenQuanYi Zen Hei}
+\newcommand\fontnamesong{AR PL UMing CN}
+\newcommand\fontnamekai{AR PL UKai CN}
+\newcommand\fontnamemono{WenQuanYi Zen Hei Mono}
+\newcommand\fontnameroman{DejaVu Sans Mono}
+\newcommand\fontromanbold{DejaVu Sans Mono Bold}
+
+\setmainfont[BoldFont=\fontromanbold]{\fontnameroman}
+\setsansfont[BoldFont=\fontromanbold]{\fontnameroman}
+\setmonofont{\fontnameroman}
+% 设置文档正文为宋体
+\setCJKmainfont[BoldFont=\fontnamemono]{\fontnamehei}
+%\setCJKsansfont[BoldFont=\fontnamehei]{\fontnamekai}
+\setCJKsansfont[BoldFont=\fontnamezhei]{\fontnamehei}
+\setCJKmonofont{\fontnamemono}
+
+
+% 楷体
+% newfontinstance = newfontfamily
+% fontinstance 创建新的字体样式，而fontfamily创建新字体族。
+\newfontinstance\KAI{\fontnamekai} 
+\newcommand{\kai}[1]{{\KAI #1}}
+
+% 黑体
+\newfontinstance\HEI{\fontnamehei}
+\newcommand{\hei}[1]{{\HEI #1}}
+
+% 英文
+\newfontinstance\ENF{\fontnameroman}
+\newcommand{\en}[1]{\,{\ENF #1}\,}
+\newcommand{\EN}{\,\ENF\,}
+
+% 调整页面出血
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}           % 如果你希望改变日期栏的宽度
+\CJKsetecglue{}
+
+% 个人信息
+\firstname{孙}
+\familyname{滨}
+\title{求职信}                      % 可选项、如不需要可删除本行
+%\address{街道及门牌号}{邮编及城市}             % 可选项、如不需要可删除本行
+\mobile{18653809933}                         % 可选项、如不需要可删除本行
+%\phone{0538-5631332}                          % 可选项、如不需要可删除本行
+%\fax{+3~(456)~789~012}                            % 可选项、如不需要可删除本行
+\email{sd44sd44@yeah.net}                    % 可选项、如不需要可删除本行
+\homepage{sd44.is-programming.com}                  % 可选项、如不需要可删除本行
+\photo[64pt][0.4pt]{picture}                  % ‘64pt’是图片必须压缩至的高度、‘0.4pt‘是图片边框的宽度 (如不需要可调节至0pt)、’picture‘ 是图片文件的名字;可选项、如不需要可删除本行
+%\quote{引言(可选项)}                           % 可选项、如不需要可删除本行
+
+% 显示索引号;仅用于在简历中使用了引言
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+
+% 分类索引
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            内容
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+
+\section{个人简历}
+\cvline{姓名}{孙滨}
+\cvline{性别}{男}
+\cvline{出生日期}{1983/11/28}
+\cvline{学历}{高中}
+
+%\section{教育背景}
+%\cventry{年 -- 年}{学位}{院校}{城市}{\textit{成绩}}{说明}
+%\cventry{年 -- 年}{学位}{院校}{城市}{\textit{成绩}}{说明}
+
+%\section{毕业论文}
+%\cvitem{题目}{\emph{题目}}
+%\cvitem{导师}{导师}
+%\cvitem{说明}{\small 论文简介}
+
+\section{工作背景}
+\cventry{2002年-- 2003年}{售后}{宁阳县紫光电脑服务中心}{宁阳县}{}{全面负责紫光
+电脑于宁样的售后服务、维修工作}
+\cventry{2004年--2007年}{业代}{泰安市北斗酒水}{泰安市}{}{泰山特曲、五岳独尊酒水区域代理商处
+酒水推销}
+\cventry{2007年--2012年}{业代}{济南五岳品牌有限公司}{济南市}{}{公司为泰山酒业集团
+    驻济南分公司\newline{}本人负责济南西北部地区商超、酒店、团购业务}
+
+%\section{语言技能}
+%\cvitemwithcomment{语言 1}{水平}{评价}
+%\cvitemwithcomment{语言 2}{水平}{评价}
+%\cvitemwithcomment{语言 3}{水平}{评价}
+%
+
+\section{ 电脑技能}
+\cvlanguage{OS}{\mbox{Linux, Freebsd, Windows}}{}
+\cvlanguage{programming}{\textsc{C, C++, ASM}}{}
+\cvlanguage{scripting}{Shell, Python}{早期学习Python，现遗忘较多，可在短期内重新学习运用}
+\cvlanguage{editor}{Vim}{}
+\begin{itemize}%
+    \item \small 接触UNIX/Linux系统多年，熟悉系统应用与操作。
+    \item \small 了解UNIX/Linux下API，pthread多线程编程与socket套接字编程。
+    \item \small 熟练掌握C语言，了解汇编32位，64位操作命令。
+\end{itemize}
+
+%\section{计算机技能}
+%\cvdoubleitem{类别 1}{XXX, YYY, ZZZ}{类别 4}{XXX, YYY, ZZZ}
+%\cvdoubleitem{类别 2}{XXX, YYY, ZZZ}{类别 5}{XXX, YYY, ZZZ}
+%\cvdoubleitem{类别 3}{XXX, YYY, ZZZ}{类别 6}{XXX, YYY, ZZZ}
+
+%\section{个人兴趣}
+%\cvitem{爱好 1}{\small 说明}
+%\cvitem{爱好 2}{\small 说明}
+%\cvitem{爱好 3}{\small 说明}
+
+\section{个人成绩}
+\cventry{2010年10月}{}{}{}{出于兴趣，开始自学编程}{}
+\cventry{\hbox{2011年05月}}{软考初级程序员}{}{}{总分\textit{127}分}{上午题\textit{62}分，下午题\textit{65}分}
+\cventry{2011年11月}{软考中级软件设计师}{}{}{总分\textit{119}分}{上午题\textit{55}分，下午题\textit{64}分}
+%\cventry{年 -- 年}{学位}{院校}{城市}{\textit{成绩}}{说明}
+
+%\section{其他 1}
+%\cvlistitem{项目 1}
+%\cvlistitem{项目 2}
+%\cvlistitem{项目 3}
+
+\renewcommand{\listitemsymbol}{-}             % 改变列表符号
+
+\section{其他 2}
+\cvlistdoubleitem{项目 1}{项目 4}
+\cvlistdoubleitem{项目 2}{项目 5\cite{book1}}
+\cvlistdoubleitem{项目 3}{}
+
+% 来自BibTeX文件但不使用multibib包的出版物
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% BibTeX的数字标签
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{publications}                    % 'publications' 是BibTeX文件的文件名
+
+% 来自BibTeX文件并使用multibib包的出版物
+%\section{出版物}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}               % 'publications' 是BibTeX文件的文件名
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}               % 'publications' 是BibTeX文件的文件名
+
+\end{document}
+
+
+%% 文件结尾 `template-zh.tex'.

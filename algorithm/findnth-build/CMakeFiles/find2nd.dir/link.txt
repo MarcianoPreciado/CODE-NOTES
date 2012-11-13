@@ -1,0 +1,1 @@
+/usr/bin/c++   -O2 -pipe -fomit-frame-pointer  -g    CMakeFiles/find2nd.dir/find2nd.cpp.o  -o find2nd -rdynamic 
