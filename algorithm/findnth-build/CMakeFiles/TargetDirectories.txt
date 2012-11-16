@@ -1,1 +1,0 @@
-/home/sd44/code/algorithm/findnth-build/CMakeFiles/find2nd.dir

@@ -1,15 +1,20 @@
 #include <iostream>
+#include <vector>
 #include "find2nd.h"
 
 // 如果失败，返回0值。
 template <typename T, typename compFunc>
-const findSecondNode<T> *createTree(findSecondNode<T> *array, int size,
+const findSecondNode<T> *createTree(const findSecondNode<T> *array, int &size,
 compFunc func)
 {
-  if (size <= 0)
+  if (size <= 0) {
+    size = 0;
     return static_cast<findSecondNode<T> *>(0);
-  if (size == 1)
+    }
+  if (size == 1){
+    size = 0;
     return array;
+    }
 
   bool isEvenSize;
   int rowSize;
@@ -36,7 +41,8 @@ compFunc func)
 static_cast<T *>(0), array +
 i - 1);
   }
-  createTree(row, rowSize, func);
+  size = rowSize;
+  return row;
 }
 
 template <typename T, typename compFunc>
@@ -74,15 +80,25 @@ static_cast<findSecondNode<T> *>(0));
     row[rowSize -1] = findSecondNode<T>(array + i, static_cast<T *>(0),
 static_cast<findSecondNode<T> *>(0));
 
-  const findSecondNode<T> *root = createTree(row, rowSize, func);
-  const T *maySecond = root->compareElement;
+  std::vector<const findSecondNode<T> *> destructor;
+  destructor.push_back(row);
+  const findSecondNode<T> *ptr = row;
+
+  while ((ptr = createTree(ptr, rowSize, func)) !=
+         static_cast<const findSecondNode<T> *>(0))
+      destructor.push_back(ptr);
+  destructor.pop_back();
+  ptr = destructor.at(destructor.size() - 1);
+  const T *maySecond = ptr->compareElement;
   const T *tmp;
-  while (root->child) {
-    tmp = root->child->compareElement;
+  while (ptr->child) {
+    tmp = ptr->child->compareElement;
     if (tmp != 0 && func(*tmp, *maySecond))
       maySecond = tmp;
-    root = root->child;
+    ptr = ptr->child;
   }
+  for (int i = destructor.size() - 1; i >= 0; i--)
+    delete [] destructor.at(i);
   return maySecond;
 }
 

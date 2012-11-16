@@ -42,7 +42,7 @@ public:
 };
 
 template <typename T, typename compFunc>
-const findSecondNode<T> *createTree(findSecondNode<T> *array, int size, compFunc func);
+const findSecondNode<T> *createTree(const findSecondNode<T> *array, int &size, compFunc func);
 
 template <typename T, typename compFunc>
 const T *findSecond(T *array, int size, compFunc func);
