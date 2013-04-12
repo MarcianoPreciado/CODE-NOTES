@@ -1,0 +1,1 @@
+/usr/bin/c++   -O2 -pipe -fomit-frame-pointer  -g    CMakeFiles/program.dir/TestBinarySearchTree.cpp.o  -o bin/program -rdynamic 

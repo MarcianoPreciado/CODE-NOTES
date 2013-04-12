@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope
+ xmlns:SOAP-ENV="http://www.w3.org/2003/05/soap-envelope"
+ xmlns:SOAP-ENC="http://www.w3.org/2003/05/soap-encoding"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ xmlns:ns1="http://jinanwater.cn/">
+ <SOAP-ENV:Body>
+   <ns1:wsh_update>
+    <ns1:id></ns1:id>
+    <ns1:gs></ns1:gs>
+    <ns1:zje></ns1:zje>
+    <ns1:optid></ns1:optid>
+    <ns1:fs></ns1:fs>
+    <ns1:xzrq>2013-03-19T04:13:29Z</ns1:xzrq>
+    <ns1:UserName></ns1:UserName>
+    <ns1:Password></ns1:Password>
+    <ns1:yyzd></ns1:yyzd>
+   </ns1:wsh_update>
+
+ </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

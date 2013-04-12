@@ -1,0 +1,3954 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://jinanwater.cn/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://jinanwater.cn/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://jinanwater.cn/">
+      <s:element name="GetTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTimeResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDNS">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDNSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDNSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHostInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetHostInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHostInfoResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSHA1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSHA1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckSHA1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToBASE64">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ToBASE64Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ToBASE64Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FromBASE64">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Text" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FromBASE64Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FromBASE64Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbgs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbgsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_hbgsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbwsh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbwshResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_hbwshResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_mx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smdate1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smdate2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_mxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_mxResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hbwsh_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zje" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="optid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="xzrq" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hbwsh_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hbwsh_updateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hbtsf_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zje" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hbtsf_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hbtsf_updateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TZ_Day">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Base64" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Base64_SHA1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TZ_DayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TZ_DayResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TZ_Month">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Base64" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Base64_SHA1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TZ_MonthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TZ_MonthResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="m_tz_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="m_tz_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="m_tz_updateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="m_zb_tz_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="m_zb_tz_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="m_zb_tz_updateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbfp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbfpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_hbfpResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_yyzd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_yyzdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_yyzdResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbwsh_yue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbwsh_yueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_hbwsh_yueResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_yue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_yueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_yueResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hbwsh_yue_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zje" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="optid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="xzrq" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dzid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hbwsh_yue_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hbwsh_yue_updateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hbtsf_yue_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zje" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hbtsf_yue_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hbtsf_yue_updateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hb_fp_dy_end">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hb_fp_dy_endResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hb_fp_dy_endResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_wsh">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_wshResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_wshResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_zb_mx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smdate1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smdate2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_zb_mxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_zb_mxResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsh_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zje" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="optid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="xzrq" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="wsh_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="wsh_updateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="tsf_update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zje" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="tsf_updateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tsf_updateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ZB_TZ_Day">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Base64" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Base64_SHA1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ZB_TZ_DayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZB_TZ_DayResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ZB_TZ_Month">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Base64" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Base64_SHA1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ZB_TZ_MonthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZB_TZ_MonthResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_zbfp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_zbfpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_zbfpResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fp_dy_end">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fp_dy_endResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fp_dy_endResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbgs1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbgs1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_hbgs1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbwsh1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbwsh1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_hbwsh1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_mx1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smdate1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="smdate2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_mx1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_mx1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hbwsh_update1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zje" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="optid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="xzrq" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hbwsh_update1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hbwsh_update1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hbtsf_update1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zje" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hbtsf_update1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hbtsf_update1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbfp1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_hbfp1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_hbfp1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_yyzd1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_yyzd1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_yyzd1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_yue1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_yue1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_yue1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hb_fp_dy_end1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="gs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hb_fp_dy_end1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hb_fp_dy_end1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TZ_Day1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Base64" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Base64_SHA1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TZ_Day1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TZ_Day1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="m_tz_update1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="smdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="yyzd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="m_tz_update1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="m_tz_update1Result">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="long" type="s:long" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTime" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDNSSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDNS" />
+  </wsdl:message>
+  <wsdl:message name="GetDNSSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDNSResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHostInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHostInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetHostInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHostInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckSHA1SoapIn">
+    <wsdl:part name="parameters" element="tns:CheckSHA1" />
+  </wsdl:message>
+  <wsdl:message name="CheckSHA1SoapOut">
+    <wsdl:part name="parameters" element="tns:CheckSHA1Response" />
+  </wsdl:message>
+  <wsdl:message name="ToBASE64SoapIn">
+    <wsdl:part name="parameters" element="tns:ToBASE64" />
+  </wsdl:message>
+  <wsdl:message name="ToBASE64SoapOut">
+    <wsdl:part name="parameters" element="tns:ToBASE64Response" />
+  </wsdl:message>
+  <wsdl:message name="FromBASE64SoapIn">
+    <wsdl:part name="parameters" element="tns:FromBASE64" />
+  </wsdl:message>
+  <wsdl:message name="FromBASE64SoapOut">
+    <wsdl:part name="parameters" element="tns:FromBASE64Response" />
+  </wsdl:message>
+  <wsdl:message name="get_hbgsSoapIn">
+    <wsdl:part name="parameters" element="tns:get_hbgs" />
+  </wsdl:message>
+  <wsdl:message name="get_hbgsSoapOut">
+    <wsdl:part name="parameters" element="tns:get_hbgsResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwshSoapIn">
+    <wsdl:part name="parameters" element="tns:get_hbwsh" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwshSoapOut">
+    <wsdl:part name="parameters" element="tns:get_hbwshResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_mxSoapIn">
+    <wsdl:part name="parameters" element="tns:get_mx" />
+  </wsdl:message>
+  <wsdl:message name="get_mxSoapOut">
+    <wsdl:part name="parameters" element="tns:get_mxResponse" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:hbwsh_update" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:hbwsh_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:hbtsf_update" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:hbtsf_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="TZ_DaySoapIn">
+    <wsdl:part name="parameters" element="tns:TZ_Day" />
+  </wsdl:message>
+  <wsdl:message name="TZ_DaySoapOut">
+    <wsdl:part name="parameters" element="tns:TZ_DayResponse" />
+  </wsdl:message>
+  <wsdl:message name="TZ_MonthSoapIn">
+    <wsdl:part name="parameters" element="tns:TZ_Month" />
+  </wsdl:message>
+  <wsdl:message name="TZ_MonthSoapOut">
+    <wsdl:part name="parameters" element="tns:TZ_MonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="m_tz_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:m_tz_update" />
+  </wsdl:message>
+  <wsdl:message name="m_tz_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:m_tz_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="m_zb_tz_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:m_zb_tz_update" />
+  </wsdl:message>
+  <wsdl:message name="m_zb_tz_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:m_zb_tz_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_hbfpSoapIn">
+    <wsdl:part name="parameters" element="tns:get_hbfp" />
+  </wsdl:message>
+  <wsdl:message name="get_hbfpSoapOut">
+    <wsdl:part name="parameters" element="tns:get_hbfpResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_yyzdSoapIn">
+    <wsdl:part name="parameters" element="tns:get_yyzd" />
+  </wsdl:message>
+  <wsdl:message name="get_yyzdSoapOut">
+    <wsdl:part name="parameters" element="tns:get_yyzdResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwsh_yueSoapIn">
+    <wsdl:part name="parameters" element="tns:get_hbwsh_yue" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwsh_yueSoapOut">
+    <wsdl:part name="parameters" element="tns:get_hbwsh_yueResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_yueSoapIn">
+    <wsdl:part name="parameters" element="tns:get_yue" />
+  </wsdl:message>
+  <wsdl:message name="get_yueSoapOut">
+    <wsdl:part name="parameters" element="tns:get_yueResponse" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_yue_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:hbwsh_yue_update" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_yue_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:hbwsh_yue_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_yue_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:hbtsf_yue_update" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_yue_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:hbtsf_yue_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="hb_fp_dy_endSoapIn">
+    <wsdl:part name="parameters" element="tns:hb_fp_dy_end" />
+  </wsdl:message>
+  <wsdl:message name="hb_fp_dy_endSoapOut">
+    <wsdl:part name="parameters" element="tns:hb_fp_dy_endResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_wshSoapIn">
+    <wsdl:part name="parameters" element="tns:get_wsh" />
+  </wsdl:message>
+  <wsdl:message name="get_wshSoapOut">
+    <wsdl:part name="parameters" element="tns:get_wshResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_zb_mxSoapIn">
+    <wsdl:part name="parameters" element="tns:get_zb_mx" />
+  </wsdl:message>
+  <wsdl:message name="get_zb_mxSoapOut">
+    <wsdl:part name="parameters" element="tns:get_zb_mxResponse" />
+  </wsdl:message>
+  <wsdl:message name="wsh_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:wsh_update" />
+  </wsdl:message>
+  <wsdl:message name="wsh_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:wsh_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="tsf_updateSoapIn">
+    <wsdl:part name="parameters" element="tns:tsf_update" />
+  </wsdl:message>
+  <wsdl:message name="tsf_updateSoapOut">
+    <wsdl:part name="parameters" element="tns:tsf_updateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZB_TZ_DaySoapIn">
+    <wsdl:part name="parameters" element="tns:ZB_TZ_Day" />
+  </wsdl:message>
+  <wsdl:message name="ZB_TZ_DaySoapOut">
+    <wsdl:part name="parameters" element="tns:ZB_TZ_DayResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZB_TZ_MonthSoapIn">
+    <wsdl:part name="parameters" element="tns:ZB_TZ_Month" />
+  </wsdl:message>
+  <wsdl:message name="ZB_TZ_MonthSoapOut">
+    <wsdl:part name="parameters" element="tns:ZB_TZ_MonthResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_zbfpSoapIn">
+    <wsdl:part name="parameters" element="tns:get_zbfp" />
+  </wsdl:message>
+  <wsdl:message name="get_zbfpSoapOut">
+    <wsdl:part name="parameters" element="tns:get_zbfpResponse" />
+  </wsdl:message>
+  <wsdl:message name="fp_dy_endSoapIn">
+    <wsdl:part name="parameters" element="tns:fp_dy_end" />
+  </wsdl:message>
+  <wsdl:message name="fp_dy_endSoapOut">
+    <wsdl:part name="parameters" element="tns:fp_dy_endResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_hbgs1SoapIn">
+    <wsdl:part name="parameters" element="tns:get_hbgs1" />
+  </wsdl:message>
+  <wsdl:message name="get_hbgs1SoapOut">
+    <wsdl:part name="parameters" element="tns:get_hbgs1Response" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwsh1SoapIn">
+    <wsdl:part name="parameters" element="tns:get_hbwsh1" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwsh1SoapOut">
+    <wsdl:part name="parameters" element="tns:get_hbwsh1Response" />
+  </wsdl:message>
+  <wsdl:message name="get_mx1SoapIn">
+    <wsdl:part name="parameters" element="tns:get_mx1" />
+  </wsdl:message>
+  <wsdl:message name="get_mx1SoapOut">
+    <wsdl:part name="parameters" element="tns:get_mx1Response" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_update1SoapIn">
+    <wsdl:part name="parameters" element="tns:hbwsh_update1" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_update1SoapOut">
+    <wsdl:part name="parameters" element="tns:hbwsh_update1Response" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_update1SoapIn">
+    <wsdl:part name="parameters" element="tns:hbtsf_update1" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_update1SoapOut">
+    <wsdl:part name="parameters" element="tns:hbtsf_update1Response" />
+  </wsdl:message>
+  <wsdl:message name="get_hbfp1SoapIn">
+    <wsdl:part name="parameters" element="tns:get_hbfp1" />
+  </wsdl:message>
+  <wsdl:message name="get_hbfp1SoapOut">
+    <wsdl:part name="parameters" element="tns:get_hbfp1Response" />
+  </wsdl:message>
+  <wsdl:message name="get_yyzd1SoapIn">
+    <wsdl:part name="parameters" element="tns:get_yyzd1" />
+  </wsdl:message>
+  <wsdl:message name="get_yyzd1SoapOut">
+    <wsdl:part name="parameters" element="tns:get_yyzd1Response" />
+  </wsdl:message>
+  <wsdl:message name="get_yue1SoapIn">
+    <wsdl:part name="parameters" element="tns:get_yue1" />
+  </wsdl:message>
+  <wsdl:message name="get_yue1SoapOut">
+    <wsdl:part name="parameters" element="tns:get_yue1Response" />
+  </wsdl:message>
+  <wsdl:message name="hb_fp_dy_end1SoapIn">
+    <wsdl:part name="parameters" element="tns:hb_fp_dy_end1" />
+  </wsdl:message>
+  <wsdl:message name="hb_fp_dy_end1SoapOut">
+    <wsdl:part name="parameters" element="tns:hb_fp_dy_end1Response" />
+  </wsdl:message>
+  <wsdl:message name="TZ_Day1SoapIn">
+    <wsdl:part name="parameters" element="tns:TZ_Day1" />
+  </wsdl:message>
+  <wsdl:message name="TZ_Day1SoapOut">
+    <wsdl:part name="parameters" element="tns:TZ_Day1Response" />
+  </wsdl:message>
+  <wsdl:message name="m_tz_update1SoapIn">
+    <wsdl:part name="parameters" element="tns:m_tz_update1" />
+  </wsdl:message>
+  <wsdl:message name="m_tz_update1SoapOut">
+    <wsdl:part name="parameters" element="tns:m_tz_update1Response" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeHttpGetIn" />
+  <wsdl:message name="GetTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetDNSHttpGetIn" />
+  <wsdl:message name="GetDNSHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHostInfoHttpGetIn" />
+  <wsdl:message name="GetHostInfoHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="CheckSHA1HttpGetIn">
+    <wsdl:part name="Text" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckSHA1HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ToBASE64HttpGetIn">
+    <wsdl:part name="Text" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ToBASE64HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="FromBASE64HttpGetIn">
+    <wsdl:part name="Text" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FromBASE64HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbgsHttpGetIn">
+    <wsdl:part name="str" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbgsHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwshHttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwshHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_mxHttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+    <wsdl:part name="smdate1" type="s:string" />
+    <wsdl:part name="smdate2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_mxHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_updateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="optid" type="s:string" />
+    <wsdl:part name="fs" type="s:string" />
+    <wsdl:part name="xzrq" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_updateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_updateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_updateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TZ_DayHttpGetIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="Base64" type="s:string" />
+    <wsdl:part name="Base64_SHA1" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TZ_DayHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TZ_MonthHttpGetIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="Base64" type="s:string" />
+    <wsdl:part name="Base64_SHA1" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TZ_MonthHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="m_tz_updateHttpGetIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="filename" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="m_tz_updateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="m_zb_tz_updateHttpGetIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="filename" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="m_zb_tz_updateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbfpHttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbfpHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_yyzdHttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_yyzdHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwsh_yueHttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwsh_yueHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_yueHttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_yueHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_yue_updateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="optid" type="s:string" />
+    <wsdl:part name="fs" type="s:string" />
+    <wsdl:part name="xzrq" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+    <wsdl:part name="dzid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_yue_updateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_yue_updateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_yue_updateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hb_fp_dy_endHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hb_fp_dy_endHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_wshHttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_wshHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_zb_mxHttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+    <wsdl:part name="smdate1" type="s:string" />
+    <wsdl:part name="smdate2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_zb_mxHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="wsh_updateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="optid" type="s:string" />
+    <wsdl:part name="fs" type="s:string" />
+    <wsdl:part name="xzrq" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsh_updateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="tsf_updateHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="tsf_updateHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ZB_TZ_DayHttpGetIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="Base64" type="s:string" />
+    <wsdl:part name="Base64_SHA1" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ZB_TZ_DayHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ZB_TZ_MonthHttpGetIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="Base64" type="s:string" />
+    <wsdl:part name="Base64_SHA1" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ZB_TZ_MonthHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_zbfpHttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_zbfpHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="fp_dy_endHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fp_dy_endHttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbgs1HttpGetIn">
+    <wsdl:part name="str" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbgs1HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwsh1HttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwsh1HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_mx1HttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+    <wsdl:part name="smdate1" type="s:string" />
+    <wsdl:part name="smdate2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_mx1HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_update1HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="optid" type="s:string" />
+    <wsdl:part name="fs" type="s:string" />
+    <wsdl:part name="xzrq" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_update1HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_update1HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_update1HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbfp1HttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbfp1HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_yyzd1HttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_yyzd1HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_yue1HttpGetIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_yue1HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hb_fp_dy_end1HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hb_fp_dy_end1HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TZ_Day1HttpGetIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="Base64" type="s:string" />
+    <wsdl:part name="Base64_SHA1" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TZ_Day1HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="m_tz_update1HttpGetIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="filename" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="m_tz_update1HttpGetOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeHttpPostIn" />
+  <wsdl:message name="GetTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetDNSHttpPostIn" />
+  <wsdl:message name="GetDNSHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetHostInfoHttpPostIn" />
+  <wsdl:message name="GetHostInfoHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="CheckSHA1HttpPostIn">
+    <wsdl:part name="Text" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckSHA1HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ToBASE64HttpPostIn">
+    <wsdl:part name="Text" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ToBASE64HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="FromBASE64HttpPostIn">
+    <wsdl:part name="Text" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="FromBASE64HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbgsHttpPostIn">
+    <wsdl:part name="str" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbgsHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwshHttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwshHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_mxHttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+    <wsdl:part name="smdate1" type="s:string" />
+    <wsdl:part name="smdate2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_mxHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_updateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="optid" type="s:string" />
+    <wsdl:part name="fs" type="s:string" />
+    <wsdl:part name="xzrq" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_updateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_updateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_updateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TZ_DayHttpPostIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="Base64" type="s:string" />
+    <wsdl:part name="Base64_SHA1" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TZ_DayHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TZ_MonthHttpPostIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="Base64" type="s:string" />
+    <wsdl:part name="Base64_SHA1" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TZ_MonthHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="m_tz_updateHttpPostIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="filename" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="m_tz_updateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="m_zb_tz_updateHttpPostIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="filename" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="m_zb_tz_updateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbfpHttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbfpHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_yyzdHttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_yyzdHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwsh_yueHttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwsh_yueHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_yueHttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_yueHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_yue_updateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="optid" type="s:string" />
+    <wsdl:part name="fs" type="s:string" />
+    <wsdl:part name="xzrq" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+    <wsdl:part name="dzid" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_yue_updateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_yue_updateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_yue_updateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hb_fp_dy_endHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hb_fp_dy_endHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_wshHttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_wshHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_zb_mxHttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+    <wsdl:part name="smdate1" type="s:string" />
+    <wsdl:part name="smdate2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_zb_mxHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="wsh_updateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="optid" type="s:string" />
+    <wsdl:part name="fs" type="s:string" />
+    <wsdl:part name="xzrq" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="wsh_updateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="tsf_updateHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="tsf_updateHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ZB_TZ_DayHttpPostIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="Base64" type="s:string" />
+    <wsdl:part name="Base64_SHA1" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ZB_TZ_DayHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="ZB_TZ_MonthHttpPostIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="Base64" type="s:string" />
+    <wsdl:part name="Base64_SHA1" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ZB_TZ_MonthHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_zbfpHttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_zbfpHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="fp_dy_endHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="fp_dy_endHttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbgs1HttpPostIn">
+    <wsdl:part name="str" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbgs1HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwsh1HttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbwsh1HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_mx1HttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+    <wsdl:part name="smdate1" type="s:string" />
+    <wsdl:part name="smdate2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_mx1HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_update1HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="optid" type="s:string" />
+    <wsdl:part name="fs" type="s:string" />
+    <wsdl:part name="xzrq" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hbwsh_update1HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_update1HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="zje" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hbtsf_update1HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_hbfp1HttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_hbfp1HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_yyzd1HttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_yyzd1HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="get_yue1HttpPostIn">
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="get_yue1HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="hb_fp_dy_end1HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+    <wsdl:part name="gs" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="hb_fp_dy_end1HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="TZ_Day1HttpPostIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="Base64" type="s:string" />
+    <wsdl:part name="Base64_SHA1" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TZ_Day1HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:message name="m_tz_update1HttpPostIn">
+    <wsdl:part name="smdate" type="s:string" />
+    <wsdl:part name="filename" type="s:string" />
+    <wsdl:part name="yyzd" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="m_tz_update1HttpPostOut">
+    <wsdl:part name="Body" />
+  </wsdl:message>
+  <wsdl:portType name="yl_ydSoap">
+    <wsdl:operation name="GetTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取服务器时间刻度</wsdl:documentation>
+      <wsdl:input message="tns:GetTimeSoapIn" />
+      <wsdl:output message="tns:GetTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDNS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取服务器域名</wsdl:documentation>
+      <wsdl:input message="tns:GetDNSSoapIn" />
+      <wsdl:output message="tns:GetDNSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHostInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取服务器信息集</wsdl:documentation>
+      <wsdl:input message="tns:GetHostInfoSoapIn" />
+      <wsdl:output message="tns:GetHostInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSHA1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检测SHA1签名</wsdl:documentation>
+      <wsdl:input message="tns:CheckSHA1SoapIn" />
+      <wsdl:output message="tns:CheckSHA1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ToBASE64">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检测Base64转换。</wsdl:documentation>
+      <wsdl:input message="tns:ToBASE64SoapIn" />
+      <wsdl:output message="tns:ToBASE64SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FromBASE64">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检测Base64转换。</wsdl:documentation>
+      <wsdl:input message="tns:FromBASE64SoapIn" />
+      <wsdl:output message="tns:FromBASE64SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户查询给水号</wsdl:documentation>
+      <wsdl:input message="tns:get_hbgsSoapIn" />
+      <wsdl:output message="tns:get_hbgsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户欠费查询</wsdl:documentation>
+      <wsdl:input message="tns:get_hbwshSoapIn" />
+      <wsdl:output message="tns:get_hbwshSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_mx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户缴费明细查询</wsdl:documentation>
+      <wsdl:input message="tns:get_mxSoapIn" />
+      <wsdl:output message="tns:get_mxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费</wsdl:documentation>
+      <wsdl:input message="tns:hbwsh_updateSoapIn" />
+      <wsdl:output message="tns:hbwsh_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费冲正</wsdl:documentation>
+      <wsdl:input message="tns:hbtsf_updateSoapIn" />
+      <wsdl:output message="tns:hbtsf_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">日对账</wsdl:documentation>
+      <wsdl:input message="tns:TZ_DaySoapIn" />
+      <wsdl:output message="tns:TZ_DaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Month">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">月对账</wsdl:documentation>
+      <wsdl:input message="tns:TZ_MonthSoapIn" />
+      <wsdl:output message="tns:TZ_MonthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">对账内部处理</wsdl:documentation>
+      <wsdl:input message="tns:m_tz_updateSoapIn" />
+      <wsdl:output message="tns:m_tz_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="m_zb_tz_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">对账内部处理</wsdl:documentation>
+      <wsdl:input message="tns:m_zb_tz_updateSoapIn" />
+      <wsdl:output message="tns:m_zb_tz_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户发票查询</wsdl:documentation>
+      <wsdl:input message="tns:get_hbfpSoapIn" />
+      <wsdl:output message="tns:get_hbfpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">自查yyzd和jffs</wsdl:documentation>
+      <wsdl:input message="tns:get_yyzdSoapIn" />
+      <wsdl:output message="tns:get_yyzdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh_yue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户欠费查询(加预收)</wsdl:documentation>
+      <wsdl:input message="tns:get_hbwsh_yueSoapIn" />
+      <wsdl:output message="tns:get_hbwsh_yueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_yue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查用户余额</wsdl:documentation>
+      <wsdl:input message="tns:get_yueSoapIn" />
+      <wsdl:output message="tns:get_yueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_yue_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费(带余额)</wsdl:documentation>
+      <wsdl:input message="tns:hbwsh_yue_updateSoapIn" />
+      <wsdl:output message="tns:hbwsh_yue_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_yue_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费冲正</wsdl:documentation>
+      <wsdl:input message="tns:hbtsf_yue_updateSoapIn" />
+      <wsdl:output message="tns:hbtsf_yue_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表发票打印</wsdl:documentation>
+      <wsdl:input message="tns:hb_fp_dy_endSoapIn" />
+      <wsdl:output message="tns:hb_fp_dy_endSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_wsh">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户欠费查询</wsdl:documentation>
+      <wsdl:input message="tns:get_wshSoapIn" />
+      <wsdl:output message="tns:get_wshSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_zb_mx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费明细查询</wsdl:documentation>
+      <wsdl:input message="tns:get_zb_mxSoapIn" />
+      <wsdl:output message="tns:get_zb_mxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsh_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费</wsdl:documentation>
+      <wsdl:input message="tns:wsh_updateSoapIn" />
+      <wsdl:output message="tns:wsh_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="tsf_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费冲正</wsdl:documentation>
+      <wsdl:input message="tns:tsf_updateSoapIn" />
+      <wsdl:output message="tns:tsf_updateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Day">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">日对账</wsdl:documentation>
+      <wsdl:input message="tns:ZB_TZ_DaySoapIn" />
+      <wsdl:output message="tns:ZB_TZ_DaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Month">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">月对账</wsdl:documentation>
+      <wsdl:input message="tns:ZB_TZ_MonthSoapIn" />
+      <wsdl:output message="tns:ZB_TZ_MonthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_zbfp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户发票查询</wsdl:documentation>
+      <wsdl:input message="tns:get_zbfpSoapIn" />
+      <wsdl:output message="tns:get_zbfpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fp_dy_end">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">总表发票打印完成</wsdl:documentation>
+      <wsdl:input message="tns:fp_dy_endSoapIn" />
+      <wsdl:output message="tns:fp_dy_endSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户查询给水号</wsdl:documentation>
+      <wsdl:input message="tns:get_hbgs1SoapIn" />
+      <wsdl:output message="tns:get_hbgs1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户欠费查询</wsdl:documentation>
+      <wsdl:input message="tns:get_hbwsh1SoapIn" />
+      <wsdl:output message="tns:get_hbwsh1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_mx1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户缴费明细查询</wsdl:documentation>
+      <wsdl:input message="tns:get_mx1SoapIn" />
+      <wsdl:output message="tns:get_mx1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费</wsdl:documentation>
+      <wsdl:input message="tns:hbwsh_update1SoapIn" />
+      <wsdl:output message="tns:hbwsh_update1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费冲正</wsdl:documentation>
+      <wsdl:input message="tns:hbtsf_update1SoapIn" />
+      <wsdl:output message="tns:hbtsf_update1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户发票查询</wsdl:documentation>
+      <wsdl:input message="tns:get_hbfp1SoapIn" />
+      <wsdl:output message="tns:get_hbfp1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">自查yyzd和jffs</wsdl:documentation>
+      <wsdl:input message="tns:get_yyzd1SoapIn" />
+      <wsdl:output message="tns:get_yyzd1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_yue1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查用户余额</wsdl:documentation>
+      <wsdl:input message="tns:get_yue1SoapIn" />
+      <wsdl:output message="tns:get_yue1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表发票打印</wsdl:documentation>
+      <wsdl:input message="tns:hb_fp_dy_end1SoapIn" />
+      <wsdl:output message="tns:hb_fp_dy_end1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">日对账</wsdl:documentation>
+      <wsdl:input message="tns:TZ_Day1SoapIn" />
+      <wsdl:output message="tns:TZ_Day1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">对账内部处理</wsdl:documentation>
+      <wsdl:input message="tns:m_tz_update1SoapIn" />
+      <wsdl:output message="tns:m_tz_update1SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="yl_ydHttpGet">
+    <wsdl:operation name="GetTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取服务器时间刻度</wsdl:documentation>
+      <wsdl:input message="tns:GetTimeHttpGetIn" />
+      <wsdl:output message="tns:GetTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDNS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取服务器域名</wsdl:documentation>
+      <wsdl:input message="tns:GetDNSHttpGetIn" />
+      <wsdl:output message="tns:GetDNSHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHostInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取服务器信息集</wsdl:documentation>
+      <wsdl:input message="tns:GetHostInfoHttpGetIn" />
+      <wsdl:output message="tns:GetHostInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSHA1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检测SHA1签名</wsdl:documentation>
+      <wsdl:input message="tns:CheckSHA1HttpGetIn" />
+      <wsdl:output message="tns:CheckSHA1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ToBASE64">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检测Base64转换。</wsdl:documentation>
+      <wsdl:input message="tns:ToBASE64HttpGetIn" />
+      <wsdl:output message="tns:ToBASE64HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FromBASE64">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检测Base64转换。</wsdl:documentation>
+      <wsdl:input message="tns:FromBASE64HttpGetIn" />
+      <wsdl:output message="tns:FromBASE64HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户查询给水号</wsdl:documentation>
+      <wsdl:input message="tns:get_hbgsHttpGetIn" />
+      <wsdl:output message="tns:get_hbgsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户欠费查询</wsdl:documentation>
+      <wsdl:input message="tns:get_hbwshHttpGetIn" />
+      <wsdl:output message="tns:get_hbwshHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_mx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户缴费明细查询</wsdl:documentation>
+      <wsdl:input message="tns:get_mxHttpGetIn" />
+      <wsdl:output message="tns:get_mxHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费</wsdl:documentation>
+      <wsdl:input message="tns:hbwsh_updateHttpGetIn" />
+      <wsdl:output message="tns:hbwsh_updateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费冲正</wsdl:documentation>
+      <wsdl:input message="tns:hbtsf_updateHttpGetIn" />
+      <wsdl:output message="tns:hbtsf_updateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">日对账</wsdl:documentation>
+      <wsdl:input message="tns:TZ_DayHttpGetIn" />
+      <wsdl:output message="tns:TZ_DayHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Month">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">月对账</wsdl:documentation>
+      <wsdl:input message="tns:TZ_MonthHttpGetIn" />
+      <wsdl:output message="tns:TZ_MonthHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">对账内部处理</wsdl:documentation>
+      <wsdl:input message="tns:m_tz_updateHttpGetIn" />
+      <wsdl:output message="tns:m_tz_updateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="m_zb_tz_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">对账内部处理</wsdl:documentation>
+      <wsdl:input message="tns:m_zb_tz_updateHttpGetIn" />
+      <wsdl:output message="tns:m_zb_tz_updateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户发票查询</wsdl:documentation>
+      <wsdl:input message="tns:get_hbfpHttpGetIn" />
+      <wsdl:output message="tns:get_hbfpHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">自查yyzd和jffs</wsdl:documentation>
+      <wsdl:input message="tns:get_yyzdHttpGetIn" />
+      <wsdl:output message="tns:get_yyzdHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh_yue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户欠费查询(加预收)</wsdl:documentation>
+      <wsdl:input message="tns:get_hbwsh_yueHttpGetIn" />
+      <wsdl:output message="tns:get_hbwsh_yueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_yue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查用户余额</wsdl:documentation>
+      <wsdl:input message="tns:get_yueHttpGetIn" />
+      <wsdl:output message="tns:get_yueHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_yue_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费(带余额)</wsdl:documentation>
+      <wsdl:input message="tns:hbwsh_yue_updateHttpGetIn" />
+      <wsdl:output message="tns:hbwsh_yue_updateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_yue_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费冲正</wsdl:documentation>
+      <wsdl:input message="tns:hbtsf_yue_updateHttpGetIn" />
+      <wsdl:output message="tns:hbtsf_yue_updateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表发票打印</wsdl:documentation>
+      <wsdl:input message="tns:hb_fp_dy_endHttpGetIn" />
+      <wsdl:output message="tns:hb_fp_dy_endHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_wsh">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户欠费查询</wsdl:documentation>
+      <wsdl:input message="tns:get_wshHttpGetIn" />
+      <wsdl:output message="tns:get_wshHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_zb_mx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费明细查询</wsdl:documentation>
+      <wsdl:input message="tns:get_zb_mxHttpGetIn" />
+      <wsdl:output message="tns:get_zb_mxHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsh_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费</wsdl:documentation>
+      <wsdl:input message="tns:wsh_updateHttpGetIn" />
+      <wsdl:output message="tns:wsh_updateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="tsf_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费冲正</wsdl:documentation>
+      <wsdl:input message="tns:tsf_updateHttpGetIn" />
+      <wsdl:output message="tns:tsf_updateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Day">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">日对账</wsdl:documentation>
+      <wsdl:input message="tns:ZB_TZ_DayHttpGetIn" />
+      <wsdl:output message="tns:ZB_TZ_DayHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Month">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">月对账</wsdl:documentation>
+      <wsdl:input message="tns:ZB_TZ_MonthHttpGetIn" />
+      <wsdl:output message="tns:ZB_TZ_MonthHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_zbfp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户发票查询</wsdl:documentation>
+      <wsdl:input message="tns:get_zbfpHttpGetIn" />
+      <wsdl:output message="tns:get_zbfpHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fp_dy_end">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">总表发票打印完成</wsdl:documentation>
+      <wsdl:input message="tns:fp_dy_endHttpGetIn" />
+      <wsdl:output message="tns:fp_dy_endHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户查询给水号</wsdl:documentation>
+      <wsdl:input message="tns:get_hbgs1HttpGetIn" />
+      <wsdl:output message="tns:get_hbgs1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户欠费查询</wsdl:documentation>
+      <wsdl:input message="tns:get_hbwsh1HttpGetIn" />
+      <wsdl:output message="tns:get_hbwsh1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_mx1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户缴费明细查询</wsdl:documentation>
+      <wsdl:input message="tns:get_mx1HttpGetIn" />
+      <wsdl:output message="tns:get_mx1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费</wsdl:documentation>
+      <wsdl:input message="tns:hbwsh_update1HttpGetIn" />
+      <wsdl:output message="tns:hbwsh_update1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费冲正</wsdl:documentation>
+      <wsdl:input message="tns:hbtsf_update1HttpGetIn" />
+      <wsdl:output message="tns:hbtsf_update1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户发票查询</wsdl:documentation>
+      <wsdl:input message="tns:get_hbfp1HttpGetIn" />
+      <wsdl:output message="tns:get_hbfp1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">自查yyzd和jffs</wsdl:documentation>
+      <wsdl:input message="tns:get_yyzd1HttpGetIn" />
+      <wsdl:output message="tns:get_yyzd1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_yue1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查用户余额</wsdl:documentation>
+      <wsdl:input message="tns:get_yue1HttpGetIn" />
+      <wsdl:output message="tns:get_yue1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表发票打印</wsdl:documentation>
+      <wsdl:input message="tns:hb_fp_dy_end1HttpGetIn" />
+      <wsdl:output message="tns:hb_fp_dy_end1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">日对账</wsdl:documentation>
+      <wsdl:input message="tns:TZ_Day1HttpGetIn" />
+      <wsdl:output message="tns:TZ_Day1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">对账内部处理</wsdl:documentation>
+      <wsdl:input message="tns:m_tz_update1HttpGetIn" />
+      <wsdl:output message="tns:m_tz_update1HttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="yl_ydHttpPost">
+    <wsdl:operation name="GetTime">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取服务器时间刻度</wsdl:documentation>
+      <wsdl:input message="tns:GetTimeHttpPostIn" />
+      <wsdl:output message="tns:GetTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDNS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取服务器域名</wsdl:documentation>
+      <wsdl:input message="tns:GetDNSHttpPostIn" />
+      <wsdl:output message="tns:GetDNSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHostInfo">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">获取服务器信息集</wsdl:documentation>
+      <wsdl:input message="tns:GetHostInfoHttpPostIn" />
+      <wsdl:output message="tns:GetHostInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSHA1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检测SHA1签名</wsdl:documentation>
+      <wsdl:input message="tns:CheckSHA1HttpPostIn" />
+      <wsdl:output message="tns:CheckSHA1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ToBASE64">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检测Base64转换。</wsdl:documentation>
+      <wsdl:input message="tns:ToBASE64HttpPostIn" />
+      <wsdl:output message="tns:ToBASE64HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FromBASE64">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检测Base64转换。</wsdl:documentation>
+      <wsdl:input message="tns:FromBASE64HttpPostIn" />
+      <wsdl:output message="tns:FromBASE64HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户查询给水号</wsdl:documentation>
+      <wsdl:input message="tns:get_hbgsHttpPostIn" />
+      <wsdl:output message="tns:get_hbgsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户欠费查询</wsdl:documentation>
+      <wsdl:input message="tns:get_hbwshHttpPostIn" />
+      <wsdl:output message="tns:get_hbwshHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_mx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户缴费明细查询</wsdl:documentation>
+      <wsdl:input message="tns:get_mxHttpPostIn" />
+      <wsdl:output message="tns:get_mxHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费</wsdl:documentation>
+      <wsdl:input message="tns:hbwsh_updateHttpPostIn" />
+      <wsdl:output message="tns:hbwsh_updateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费冲正</wsdl:documentation>
+      <wsdl:input message="tns:hbtsf_updateHttpPostIn" />
+      <wsdl:output message="tns:hbtsf_updateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">日对账</wsdl:documentation>
+      <wsdl:input message="tns:TZ_DayHttpPostIn" />
+      <wsdl:output message="tns:TZ_DayHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Month">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">月对账</wsdl:documentation>
+      <wsdl:input message="tns:TZ_MonthHttpPostIn" />
+      <wsdl:output message="tns:TZ_MonthHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">对账内部处理</wsdl:documentation>
+      <wsdl:input message="tns:m_tz_updateHttpPostIn" />
+      <wsdl:output message="tns:m_tz_updateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="m_zb_tz_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">对账内部处理</wsdl:documentation>
+      <wsdl:input message="tns:m_zb_tz_updateHttpPostIn" />
+      <wsdl:output message="tns:m_zb_tz_updateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户发票查询</wsdl:documentation>
+      <wsdl:input message="tns:get_hbfpHttpPostIn" />
+      <wsdl:output message="tns:get_hbfpHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">自查yyzd和jffs</wsdl:documentation>
+      <wsdl:input message="tns:get_yyzdHttpPostIn" />
+      <wsdl:output message="tns:get_yyzdHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh_yue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户欠费查询(加预收)</wsdl:documentation>
+      <wsdl:input message="tns:get_hbwsh_yueHttpPostIn" />
+      <wsdl:output message="tns:get_hbwsh_yueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_yue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查用户余额</wsdl:documentation>
+      <wsdl:input message="tns:get_yueHttpPostIn" />
+      <wsdl:output message="tns:get_yueHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_yue_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费(带余额)</wsdl:documentation>
+      <wsdl:input message="tns:hbwsh_yue_updateHttpPostIn" />
+      <wsdl:output message="tns:hbwsh_yue_updateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_yue_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费冲正</wsdl:documentation>
+      <wsdl:input message="tns:hbtsf_yue_updateHttpPostIn" />
+      <wsdl:output message="tns:hbtsf_yue_updateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表发票打印</wsdl:documentation>
+      <wsdl:input message="tns:hb_fp_dy_endHttpPostIn" />
+      <wsdl:output message="tns:hb_fp_dy_endHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_wsh">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户欠费查询</wsdl:documentation>
+      <wsdl:input message="tns:get_wshHttpPostIn" />
+      <wsdl:output message="tns:get_wshHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_zb_mx">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费明细查询</wsdl:documentation>
+      <wsdl:input message="tns:get_zb_mxHttpPostIn" />
+      <wsdl:output message="tns:get_zb_mxHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="wsh_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费</wsdl:documentation>
+      <wsdl:input message="tns:wsh_updateHttpPostIn" />
+      <wsdl:output message="tns:wsh_updateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="tsf_update">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费冲正</wsdl:documentation>
+      <wsdl:input message="tns:tsf_updateHttpPostIn" />
+      <wsdl:output message="tns:tsf_updateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Day">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">日对账</wsdl:documentation>
+      <wsdl:input message="tns:ZB_TZ_DayHttpPostIn" />
+      <wsdl:output message="tns:ZB_TZ_DayHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Month">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">月对账</wsdl:documentation>
+      <wsdl:input message="tns:ZB_TZ_MonthHttpPostIn" />
+      <wsdl:output message="tns:ZB_TZ_MonthHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_zbfp">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户发票查询</wsdl:documentation>
+      <wsdl:input message="tns:get_zbfpHttpPostIn" />
+      <wsdl:output message="tns:get_zbfpHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fp_dy_end">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">总表发票打印完成</wsdl:documentation>
+      <wsdl:input message="tns:fp_dy_endHttpPostIn" />
+      <wsdl:output message="tns:fp_dy_endHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户查询给水号</wsdl:documentation>
+      <wsdl:input message="tns:get_hbgs1HttpPostIn" />
+      <wsdl:output message="tns:get_hbgs1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户欠费查询</wsdl:documentation>
+      <wsdl:input message="tns:get_hbwsh1HttpPostIn" />
+      <wsdl:output message="tns:get_hbwsh1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_mx1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户缴费明细查询</wsdl:documentation>
+      <wsdl:input message="tns:get_mx1HttpPostIn" />
+      <wsdl:output message="tns:get_mx1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费</wsdl:documentation>
+      <wsdl:input message="tns:hbwsh_update1HttpPostIn" />
+      <wsdl:output message="tns:hbwsh_update1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">用户缴费冲正</wsdl:documentation>
+      <wsdl:input message="tns:hbtsf_update1HttpPostIn" />
+      <wsdl:output message="tns:hbtsf_update1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表用户发票查询</wsdl:documentation>
+      <wsdl:input message="tns:get_hbfp1HttpPostIn" />
+      <wsdl:output message="tns:get_hbfp1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">自查yyzd和jffs</wsdl:documentation>
+      <wsdl:input message="tns:get_yyzd1HttpPostIn" />
+      <wsdl:output message="tns:get_yyzd1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_yue1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">查用户余额</wsdl:documentation>
+      <wsdl:input message="tns:get_yue1HttpPostIn" />
+      <wsdl:output message="tns:get_yue1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">户表发票打印</wsdl:documentation>
+      <wsdl:input message="tns:hb_fp_dy_end1HttpPostIn" />
+      <wsdl:output message="tns:hb_fp_dy_end1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">日对账</wsdl:documentation>
+      <wsdl:input message="tns:TZ_Day1HttpPostIn" />
+      <wsdl:output message="tns:TZ_Day1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update1">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">对账内部处理</wsdl:documentation>
+      <wsdl:input message="tns:m_tz_update1HttpPostIn" />
+      <wsdl:output message="tns:m_tz_update1HttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="yl_ydSoap" type="tns:yl_ydSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTime">
+      <soap:operation soapAction="http://jinanwater.cn/GetTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDNS">
+      <soap:operation soapAction="http://jinanwater.cn/GetDNS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHostInfo">
+      <soap:operation soapAction="http://jinanwater.cn/GetHostInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSHA1">
+      <soap:operation soapAction="http://jinanwater.cn/CheckSHA1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToBASE64">
+      <soap:operation soapAction="http://jinanwater.cn/ToBASE64" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FromBASE64">
+      <soap:operation soapAction="http://jinanwater.cn/FromBASE64" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs">
+      <soap:operation soapAction="http://jinanwater.cn/get_hbgs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh">
+      <soap:operation soapAction="http://jinanwater.cn/get_hbwsh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_mx">
+      <soap:operation soapAction="http://jinanwater.cn/get_mx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update">
+      <soap:operation soapAction="http://jinanwater.cn/hbwsh_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update">
+      <soap:operation soapAction="http://jinanwater.cn/hbtsf_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day">
+      <soap:operation soapAction="http://jinanwater.cn/TZ_Day" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Month">
+      <soap:operation soapAction="http://jinanwater.cn/TZ_Month" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update">
+      <soap:operation soapAction="http://jinanwater.cn/m_tz_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="m_zb_tz_update">
+      <soap:operation soapAction="http://jinanwater.cn/m_zb_tz_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp">
+      <soap:operation soapAction="http://jinanwater.cn/get_hbfp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd">
+      <soap:operation soapAction="http://jinanwater.cn/get_yyzd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh_yue">
+      <soap:operation soapAction="http://jinanwater.cn/get_hbwsh_yue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yue">
+      <soap:operation soapAction="http://jinanwater.cn/get_yue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_yue_update">
+      <soap:operation soapAction="http://jinanwater.cn/hbwsh_yue_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_yue_update">
+      <soap:operation soapAction="http://jinanwater.cn/hbtsf_yue_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end">
+      <soap:operation soapAction="http://jinanwater.cn/hb_fp_dy_end" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_wsh">
+      <soap:operation soapAction="http://jinanwater.cn/get_wsh" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_zb_mx">
+      <soap:operation soapAction="http://jinanwater.cn/get_zb_mx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsh_update">
+      <soap:operation soapAction="http://jinanwater.cn/wsh_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tsf_update">
+      <soap:operation soapAction="http://jinanwater.cn/tsf_update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Day">
+      <soap:operation soapAction="http://jinanwater.cn/ZB_TZ_Day" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Month">
+      <soap:operation soapAction="http://jinanwater.cn/ZB_TZ_Month" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_zbfp">
+      <soap:operation soapAction="http://jinanwater.cn/get_zbfp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fp_dy_end">
+      <soap:operation soapAction="http://jinanwater.cn/fp_dy_end" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs1">
+      <soap:operation soapAction="http://jinanwater.cn/get_hbgs1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh1">
+      <soap:operation soapAction="http://jinanwater.cn/get_hbwsh1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_mx1">
+      <soap:operation soapAction="http://jinanwater.cn/get_mx1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update1">
+      <soap:operation soapAction="http://jinanwater.cn/hbwsh_update1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update1">
+      <soap:operation soapAction="http://jinanwater.cn/hbtsf_update1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp1">
+      <soap:operation soapAction="http://jinanwater.cn/get_hbfp1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd1">
+      <soap:operation soapAction="http://jinanwater.cn/get_yyzd1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yue1">
+      <soap:operation soapAction="http://jinanwater.cn/get_yue1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end1">
+      <soap:operation soapAction="http://jinanwater.cn/hb_fp_dy_end1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day1">
+      <soap:operation soapAction="http://jinanwater.cn/TZ_Day1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update1">
+      <soap:operation soapAction="http://jinanwater.cn/m_tz_update1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="yl_ydSoap12" type="tns:yl_ydSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTime">
+      <soap12:operation soapAction="http://jinanwater.cn/GetTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDNS">
+      <soap12:operation soapAction="http://jinanwater.cn/GetDNS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHostInfo">
+      <soap12:operation soapAction="http://jinanwater.cn/GetHostInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSHA1">
+      <soap12:operation soapAction="http://jinanwater.cn/CheckSHA1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToBASE64">
+      <soap12:operation soapAction="http://jinanwater.cn/ToBASE64" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FromBASE64">
+      <soap12:operation soapAction="http://jinanwater.cn/FromBASE64" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs">
+      <soap12:operation soapAction="http://jinanwater.cn/get_hbgs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh">
+      <soap12:operation soapAction="http://jinanwater.cn/get_hbwsh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_mx">
+      <soap12:operation soapAction="http://jinanwater.cn/get_mx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update">
+      <soap12:operation soapAction="http://jinanwater.cn/hbwsh_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update">
+      <soap12:operation soapAction="http://jinanwater.cn/hbtsf_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day">
+      <soap12:operation soapAction="http://jinanwater.cn/TZ_Day" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Month">
+      <soap12:operation soapAction="http://jinanwater.cn/TZ_Month" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update">
+      <soap12:operation soapAction="http://jinanwater.cn/m_tz_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="m_zb_tz_update">
+      <soap12:operation soapAction="http://jinanwater.cn/m_zb_tz_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp">
+      <soap12:operation soapAction="http://jinanwater.cn/get_hbfp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd">
+      <soap12:operation soapAction="http://jinanwater.cn/get_yyzd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh_yue">
+      <soap12:operation soapAction="http://jinanwater.cn/get_hbwsh_yue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yue">
+      <soap12:operation soapAction="http://jinanwater.cn/get_yue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_yue_update">
+      <soap12:operation soapAction="http://jinanwater.cn/hbwsh_yue_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_yue_update">
+      <soap12:operation soapAction="http://jinanwater.cn/hbtsf_yue_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end">
+      <soap12:operation soapAction="http://jinanwater.cn/hb_fp_dy_end" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_wsh">
+      <soap12:operation soapAction="http://jinanwater.cn/get_wsh" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_zb_mx">
+      <soap12:operation soapAction="http://jinanwater.cn/get_zb_mx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsh_update">
+      <soap12:operation soapAction="http://jinanwater.cn/wsh_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tsf_update">
+      <soap12:operation soapAction="http://jinanwater.cn/tsf_update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Day">
+      <soap12:operation soapAction="http://jinanwater.cn/ZB_TZ_Day" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Month">
+      <soap12:operation soapAction="http://jinanwater.cn/ZB_TZ_Month" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_zbfp">
+      <soap12:operation soapAction="http://jinanwater.cn/get_zbfp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fp_dy_end">
+      <soap12:operation soapAction="http://jinanwater.cn/fp_dy_end" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs1">
+      <soap12:operation soapAction="http://jinanwater.cn/get_hbgs1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh1">
+      <soap12:operation soapAction="http://jinanwater.cn/get_hbwsh1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_mx1">
+      <soap12:operation soapAction="http://jinanwater.cn/get_mx1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update1">
+      <soap12:operation soapAction="http://jinanwater.cn/hbwsh_update1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update1">
+      <soap12:operation soapAction="http://jinanwater.cn/hbtsf_update1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp1">
+      <soap12:operation soapAction="http://jinanwater.cn/get_hbfp1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd1">
+      <soap12:operation soapAction="http://jinanwater.cn/get_yyzd1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yue1">
+      <soap12:operation soapAction="http://jinanwater.cn/get_yue1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end1">
+      <soap12:operation soapAction="http://jinanwater.cn/hb_fp_dy_end1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day1">
+      <soap12:operation soapAction="http://jinanwater.cn/TZ_Day1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update1">
+      <soap12:operation soapAction="http://jinanwater.cn/m_tz_update1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="yl_ydHttpGet" type="tns:yl_ydHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetTime">
+      <http:operation location="/GetTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDNS">
+      <http:operation location="/GetDNS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHostInfo">
+      <http:operation location="/GetHostInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSHA1">
+      <http:operation location="/CheckSHA1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToBASE64">
+      <http:operation location="/ToBASE64" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FromBASE64">
+      <http:operation location="/FromBASE64" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs">
+      <http:operation location="/get_hbgs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh">
+      <http:operation location="/get_hbwsh" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_mx">
+      <http:operation location="/get_mx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update">
+      <http:operation location="/hbwsh_update" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update">
+      <http:operation location="/hbtsf_update" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day">
+      <http:operation location="/TZ_Day" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Month">
+      <http:operation location="/TZ_Month" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update">
+      <http:operation location="/m_tz_update" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="m_zb_tz_update">
+      <http:operation location="/m_zb_tz_update" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp">
+      <http:operation location="/get_hbfp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd">
+      <http:operation location="/get_yyzd" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh_yue">
+      <http:operation location="/get_hbwsh_yue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yue">
+      <http:operation location="/get_yue" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_yue_update">
+      <http:operation location="/hbwsh_yue_update" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_yue_update">
+      <http:operation location="/hbtsf_yue_update" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end">
+      <http:operation location="/hb_fp_dy_end" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_wsh">
+      <http:operation location="/get_wsh" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_zb_mx">
+      <http:operation location="/get_zb_mx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsh_update">
+      <http:operation location="/wsh_update" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tsf_update">
+      <http:operation location="/tsf_update" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Day">
+      <http:operation location="/ZB_TZ_Day" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Month">
+      <http:operation location="/ZB_TZ_Month" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_zbfp">
+      <http:operation location="/get_zbfp" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fp_dy_end">
+      <http:operation location="/fp_dy_end" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs1">
+      <http:operation location="/get_hbgs1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh1">
+      <http:operation location="/get_hbwsh1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_mx1">
+      <http:operation location="/get_mx1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update1">
+      <http:operation location="/hbwsh_update1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update1">
+      <http:operation location="/hbtsf_update1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp1">
+      <http:operation location="/get_hbfp1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd1">
+      <http:operation location="/get_yyzd1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yue1">
+      <http:operation location="/get_yue1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end1">
+      <http:operation location="/hb_fp_dy_end1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day1">
+      <http:operation location="/TZ_Day1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update1">
+      <http:operation location="/m_tz_update1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="yl_ydHttpPost" type="tns:yl_ydHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetTime">
+      <http:operation location="/GetTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDNS">
+      <http:operation location="/GetDNS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHostInfo">
+      <http:operation location="/GetHostInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSHA1">
+      <http:operation location="/CheckSHA1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToBASE64">
+      <http:operation location="/ToBASE64" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FromBASE64">
+      <http:operation location="/FromBASE64" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs">
+      <http:operation location="/get_hbgs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh">
+      <http:operation location="/get_hbwsh" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_mx">
+      <http:operation location="/get_mx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update">
+      <http:operation location="/hbwsh_update" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update">
+      <http:operation location="/hbtsf_update" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day">
+      <http:operation location="/TZ_Day" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Month">
+      <http:operation location="/TZ_Month" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update">
+      <http:operation location="/m_tz_update" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="m_zb_tz_update">
+      <http:operation location="/m_zb_tz_update" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp">
+      <http:operation location="/get_hbfp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd">
+      <http:operation location="/get_yyzd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh_yue">
+      <http:operation location="/get_hbwsh_yue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yue">
+      <http:operation location="/get_yue" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_yue_update">
+      <http:operation location="/hbwsh_yue_update" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_yue_update">
+      <http:operation location="/hbtsf_yue_update" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end">
+      <http:operation location="/hb_fp_dy_end" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_wsh">
+      <http:operation location="/get_wsh" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_zb_mx">
+      <http:operation location="/get_zb_mx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="wsh_update">
+      <http:operation location="/wsh_update" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tsf_update">
+      <http:operation location="/tsf_update" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Day">
+      <http:operation location="/ZB_TZ_Day" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZB_TZ_Month">
+      <http:operation location="/ZB_TZ_Month" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_zbfp">
+      <http:operation location="/get_zbfp" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fp_dy_end">
+      <http:operation location="/fp_dy_end" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbgs1">
+      <http:operation location="/get_hbgs1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbwsh1">
+      <http:operation location="/get_hbwsh1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_mx1">
+      <http:operation location="/get_mx1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbwsh_update1">
+      <http:operation location="/hbwsh_update1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hbtsf_update1">
+      <http:operation location="/hbtsf_update1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_hbfp1">
+      <http:operation location="/get_hbfp1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yyzd1">
+      <http:operation location="/get_yyzd1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_yue1">
+      <http:operation location="/get_yue1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hb_fp_dy_end1">
+      <http:operation location="/hb_fp_dy_end1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TZ_Day1">
+      <http:operation location="/TZ_Day1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="m_tz_update1">
+      <http:operation location="/m_tz_update1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="Body" type="text/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="yl_yd">
+    <wsdl:port name="yl_ydSoap" binding="tns:yl_ydSoap">
+      <soap:address location="http://public.jinanwater.com.cn/websvr/yhds/yl_yd.asmx" />
+    </wsdl:port>
+    <wsdl:port name="yl_ydSoap12" binding="tns:yl_ydSoap12">
+      <soap12:address location="http://public.jinanwater.com.cn/websvr/yhds/yl_yd.asmx" />
+    </wsdl:port>
+    <wsdl:port name="yl_ydHttpGet" binding="tns:yl_ydHttpGet">
+      <http:address location="http://public.jinanwater.com.cn/websvr/yhds/yl_yd.asmx" />
+    </wsdl:port>
+    <wsdl:port name="yl_ydHttpPost" binding="tns:yl_ydHttpPost">
+      <http:address location="http://public.jinanwater.com.cn/websvr/yhds/yl_yd.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

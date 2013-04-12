@@ -1,0 +1,42 @@
+.SUFFIXES: .wsdl .xsd
+GSOAP=soaptools/soapcpp2
+WSDL2H=soaptools/wsdl2h
+
+#in Linux/Unix, 以下两行不需要
+#SOAPH=soaptools/stdsoap2.h
+#SOAPC=soaptools/stdsoap2.c
+SOAPCPP=soaptools/stdsoap2.cpp
+SOAPLIBS=soapC.c soapClient.c
+CC=gcc
+CPP=g++
+LIBS=
+CIFLAGS=-Isoaptools
+CFLAGS=-O2 -Wall -g $(CIFLAGS)
+
+all: 	client
+
+client: 	client.c soapC.o soapClient.o
+	$(CC) $(CFLAGS) -o client client.c $(SOAPC) soapC.o soapClient.o -lgsoap
+
+soapC.o: 	
+soapClient.o: 	
+
+first:	jnuy.wsdl 
+	$(WSDL2H) -c -d jnuy.wsdl
+	$(GSOAP) -Isoaptools -c -C jnuy.h
+
+.c.o: 
+	$(CC) $(CFLAGS) -c $<
+.cpp.o: 
+	$(CC) $(CFLAGS) -c $<
+
+.PHONY:	clean distclean
+clean: 
+	@echo "cleanning project" 
+	-rm -f *.o *.log *.xml *.nsmap *Stub.h *Proxy.h *Object.h soap*.c 
+	@echo "clean completed"
+distclean: 
+	@echo "distcleanning project" 
+	-rm -f *.o *.log *.xml *.nsmap *Stub.h *Proxy.h *Object.h soap*.c 
+	-rm -f client jnuy.h
+	@echo "distclean completed"

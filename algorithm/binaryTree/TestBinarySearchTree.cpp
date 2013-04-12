@@ -6,7 +6,7 @@
 using namespace std;
 
 // Test program
-int main(int, char ** )
+int main(int, char * )
 {
   srand(static_cast<unsigned int>(time(NULL)));
   BinarySearchTree<int> tmp;

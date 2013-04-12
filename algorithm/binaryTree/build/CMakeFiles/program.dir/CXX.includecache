@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sd44/code/algorithm/binaryTree/BinarySearchTree.h
+iostream
+-
+vector
+-
+
+/home/sd44/code/algorithm/binaryTree/TestBinarySearchTree.cpp
+iostream
+-
+cstdlib
+-
+ctime
+-
+BinarySearchTree.h
+/home/sd44/code/algorithm/binaryTree/BinarySearchTree.h
+

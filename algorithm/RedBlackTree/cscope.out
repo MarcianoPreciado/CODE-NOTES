@@ -1,0 +1,1119 @@
+cscope 15 $HOME/code/algorithm/redBlackTree               0000005072
+	@RedBlackTree.h
+
+1 #iâdeà
+RED_BLACK_TREE_H
+
+
+2 
+	#RED_BLACK_TREE_H
+
+
+	)
+
+4 
+	~<io¡»am
+>
+
+5 
+usšg
+ 
+Çme¥aû
+ 
+	g¡d
+;
+
+24 
+	g‹m¶©e
+ <
+ty³Çme
+ 
+	gCom·¿bË
+>
+
+25 þas 
+	cRedBÏckT»e
+
+
+27 
+	mpublic
+:
+
+32 
+ex¶ic™
+ 
+	$RedBÏckT»e
+ÐcÚ¡ 
+Com·¿bË
+ & 
+ÃgInf
+ )
+
+34 
+nuÎNode
+ = 
+Ãw
+ 
+RedBÏckNode
+;
+
+35 
+nuÎNode
+->
+Ëá
+ =‚uÎNode->
+right
+ =‚ullNode;
+
+36 
+h—d”
+ = 
+Ãw
+ 
+	`RedBÏckNode
+Ð
+ÃgInf
+ );
+
+37 
+h—d”
+->
+Ëá
+ = h—d”->
+right
+ = 
+nuÎNode
+;
+
+40 
+	$RedBÏckT»e
+ÐcÚ¡ 
+RedBÏckT»e
+ & 
+rhs
+ )
+
+42 
+nuÎNode
+ = 
+Ãw
+ 
+RedBÏckNode
+;
+
+43 
+nuÎNode
+->
+Ëá
+ =‚uÎNode->
+right
+ =‚ullNode;
+
+44 
+h—d”
+ = 
+Ãw
+ 
+	`RedBÏckNode
+Ð
+rhs
+.h—d”->
+–em’t
+ );
+
+45 
+h—d”
+->
+Ëá
+ = h—d”->
+right
+ = 
+nuÎNode
+;
+
+46 *
+this
+ = 
+rhs
+;
+
+47 
+	}
+}
+
+49 ~
+	$RedBÏckT»e
+( )
+
+51 
+	`makeEm±y
+( );
+
+52 
+d–‘e
+ 
+nuÎNode
+;
+
+53 
+d–‘e
+ 
+h—d”
+;
+
+54 
+	}
+}
+
+56 cÚ¡ 
+	gCom·¿bË
+ & 
+	$fšdMš
+( ) const
+
+58 ifÐ
+	`isEm±y
+( ) )
+
+62 
+RedBÏckNode
+ *
+™r
+ = 
+h—d”
+->
+right
+;
+
+64  
+™r
+->
+Ëá
+ !ð
+nuÎNode
+ )
+
+65 
+™r
+ = iŒ->
+Ëá
+;
+
+67  
+™r
+->
+–em’t
+;
+
+68 
+	}
+}
+
+70 cÚ¡ 
+	gCom·¿bË
+ & 
+	$fšdMax
+( ) const
+
+72 ifÐ
+	`isEm±y
+( ) )
+
+75 
+RedBÏckNode
+ *
+™r
+ = 
+h—d”
+->
+right
+;
+
+77  
+™r
+->
+right
+ !ð
+nuÎNode
+ )
+
+78 
+™r
+ = iŒ->
+right
+;
+
+80  
+™r
+->
+–em’t
+;
+
+81 
+	}
+}
+
+83 
+boÞ
+ 
+	$cÚšs
+ÐcÚ¡ 
+Com·¿bË
+ & 
+x
+ ) const
+
+85 
+nuÎNode
+->
+–em’t
+ = 
+x
+;
+
+86 
+RedBÏckNode
+ *
+cu¼
+ = 
+h—d”
+->
+right
+;
+
+90 ifÐ
+x
+ < 
+cu¼
+->
+–em’t
+ )
+
+91 
+cu¼
+ = cu¼->
+Ëá
+;
+
+92 ifÐ
+cu¼
+->
+–em’t
+ < 
+x
+ )
+
+93 
+cu¼
+ = cu¼->
+right
+;
+
+95  
+cu¼
+ !ð
+nuÎNode
+;
+
+97 
+	}
+}
+
+99 
+boÞ
+ 
+	$isEm±y
+( ) const
+
+101  
+h—d”
+->
+right
+ =ð
+nuÎNode
+;
+
+102 
+	}
+}
+
+104 
+	$´štT»e
+( ) const
+
+106 ifÐ
+h—d”
+->
+right
+ =ð
+nuÎNode
+ )
+
+107 
+cout
+ << "Em±y»e" << 
+’dl
+;
+
+109 
+	`´štT»e
+Ð
+h—d”
+->
+right
+ );
+
+110 
+	}
+}
+
+112 
+	$makeEm±y
+( )
+
+114 
+	`»þaimMemÜy
+Ð
+h—d”
+->
+right
+ );
+
+115 
+h—d”
+->
+right
+ = 
+nuÎNode
+;
+
+116 
+	}
+}
+
+121 
+	$š£¹
+ÐcÚ¡ 
+Com·¿bË
+ & 
+x
+ )
+
+123 
+cu¼’t
+ = 
+·»Á
+ = 
+g¿nd
+ = 
+h—d”
+;
+
+124 
+nuÎNode
+->
+–em’t
+ = 
+x
+;
+
+126  
+cu¼’t
+->
+–em’t
+ !ð
+x
+ )
+
+128 
+g»©
+ = 
+g¿nd
+; g¿nd = 
+·»Á
+;…¬’ˆð
+cu¼’t
+;
+
+129 
+cu¼’t
+ = 
+x
+ < cu¼’t->
+–em’t
+ ? cu¼’t->
+Ëá
+ : cu¼’t->
+right
+;
+
+132 ifÐ
+cu¼’t
+->
+Ëá
+->
+cÞÜ
+ =ð
+RED
+ && cu¼’t->
+right
+->color == RED )
+
+133 
+	`hªdËReÜ›Á
+Ð
+x
+ );
+
+137 ifÐ
+cu¼’t
+ !ð
+nuÎNode
+ )
+
+139 
+cu¼’t
+ = 
+Ãw
+ 
+	`RedBÏckNode
+Ð
+x
+, 
+nuÎNode
+,‚ullNode );
+
+142 ifÐ
+x
+ < 
+·»Á
+->
+–em’t
+ )
+
+143 
+·»Á
+->
+Ëá
+ = 
+cu¼’t
+;
+
+145 
+·»Á
+->
+right
+ = 
+cu¼’t
+;
+
+146 
+	`hªdËReÜ›Á
+Ð
+x
+ );
+
+147 
+	}
+}
+
+149 
+	$»move
+ÐcÚ¡ 
+Com·¿bË
+ & 
+x
+ )
+
+151 
+cout
+ << "SÜry,„emovunim¶em’‹d; " << 
+x
+ <<
+
+152 " stžÈ´e£Á" << 
+’dl
+;
+
+153 
+	}
+}
+
+155 ’um { 
+	gRED
+, 
+	gBLACK
+ };
+
+157 cÚ¡ 
+	gRedBÏckT»e
+ & 
+	gÝ”©Ü
+=ÐcÚ¡ 
+RedBÏckT»e
+ & 
+rhs
+ )
+
+159 ifÐ
+this
+ !ð&
+rhs
+ )
+
+161 
+makeEm±y
+( );
+
+162 
+	gh—d”
+->
+	gright
+ = 
+þÚe
+Ð
+rhs
+.
+h—d”
+->
+right
+ );
+
+165  *
+	gthis
+;
+
+168 
+	g´iv©e
+:
+
+169 
+	sRedBÏckNode
+
+
+171 
+Com·¿bË
+ 
+–em’t
+;
+
+172 
+RedBÏckNode
+ *
+	gËá
+;
+
+173 
+RedBÏckNode
+ *
+	gright
+;
+
+174 
+	gcÞÜ
+;
+
+176 
+RedBÏckNode
+ÐcÚ¡ 
+Com·¿bË
+ & 
+theEËm’t
+ = Comparable( ),
+
+177 
+RedBÏckNode
+ *
+É
+ = 
+NULL
+, RedBÏckNod*
+¹
+ = NULL,
+
+178 
+c
+ = 
+BLACK
+ )
+
+179 : 
+–em’t
+Ð
+theEËm’t
+ ), 
+Ëá
+Ð
+É
+ ), 
+right
+Ð
+¹
+ ), 
+cÞÜ
+Ð
+c
+ ) { }
+
+182 
+RedBÏckNode
+ *
+	gh—d”
+;
+
+183 
+RedBÏckNode
+ *
+	gnuÎNode
+;
+
+186 
+RedBÏckNode
+ *
+	gcu¼’t
+;
+
+187 
+RedBÏckNode
+ *
+	g·»Á
+;
+
+188 
+RedBÏckNode
+ *
+	gg¿nd
+;
+
+189 
+RedBÏckNode
+ *
+	gg»©
+;
+
+192 
+	$»þaimMemÜy
+Ð
+RedBÏckNode
+ *
+t
+ )
+
+194 ifÐ
+t
+ !ðt->
+Ëá
+ )
+
+196 
+	`»þaimMemÜy
+Ð
+t
+->
+Ëá
+ );
+
+197 
+	`»þaimMemÜy
+Ð
+t
+->
+right
+ );
+
+198 
+d–‘e
+ 
+t
+;
+
+200 
+	}
+}
+
+202 
+	$´štT»e
+Ð
+RedBÏckNode
+ *
+t
+ ) const
+
+204 ifÐ
+t
+ !ðt->
+Ëá
+ )
+
+206 
+	`´štT»e
+Ð
+t
+->
+Ëá
+ );
+
+207 
+cout
+ << 
+t
+->
+–em’t
+ << 
+’dl
+;
+
+208 
+	`´štT»e
+Ð
+t
+->
+right
+ );
+
+210 
+	}
+}
+
+212 
+RedBÏckNode
+ * 
+	$þÚe
+Ð
+RedBÏckNode
+ * 
+t
+ ) const
+
+214 ifÐ
+t
+ =ðt->
+Ëá
+ )
+
+215  
+nuÎNode
+;
+
+217  
+Ãw
+ 
+	`RedBÏckNode
+Ð
+t
+->
+–em’t
+, 
+	`þÚe
+Ðt->
+Ëá
+ ),
+
+218 
+	`þÚe
+Ð
+t
+->
+right
+ ),->
+cÞÜ
+ );
+
+219 
+	}
+}
+
+226 
+	$hªdËReÜ›Á
+ÐcÚ¡ 
+Com·¿bË
+ & 
+™em
+ )
+
+229 
+cu¼’t
+->
+cÞÜ
+ = 
+RED
+;
+
+230 
+cu¼’t
+->
+Ëá
+->
+cÞÜ
+ = 
+BLACK
+;
+
+231 
+cu¼’t
+->
+right
+->
+cÞÜ
+ = 
+BLACK
+;
+
+233 ifÐ
+·»Á
+->
+cÞÜ
+ =ð
+RED
+ )
+
+235 
+g¿nd
+->
+cÞÜ
+ = 
+RED
+;
+
+236 ifÐ
+™em
+ < 
+g¿nd
+->
+–em’t
+ !ð™em < 
+·»Á
+->element )
+
+237 
+·»Á
+ = 
+	`rÙ©e
+Ð
+™em
+, 
+g¿nd
+ );
+
+238 
+cu¼’t
+ = 
+	`rÙ©e
+Ð
+™em
+, 
+g»©
+ );
+
+239 
+cu¼’t
+->
+cÞÜ
+ = 
+BLACK
+;
+
+241 
+h—d”
+->
+right
+->
+cÞÜ
+ = 
+BLACK
+;
+
+242 
+	}
+}
+
+252 
+RedBÏckNode
+ * 
+	$rÙ©e
+ÐcÚ¡ 
+Com·¿bË
+ & 
+™em
+, 
+RedBÏckNode
+ *
+theP¬’t
+ )
+
+254 ifÐ
+™em
+ < 
+theP¬’t
+->
+–em’t
+ )
+
+256 
+™em
+ < 
+theP¬’t
+->
+Ëá
+->
+–em’t
+ ?
+
+257 
+	`rÙ©eW™hLeáChžd
+Ð
+theP¬’t
+->
+Ëá
+ ) :
+
+258 
+	`rÙ©eW™hRightChžd
+Ð
+theP¬’t
+->
+Ëá
+ ) ;
+
+259  
+theP¬’t
+->
+Ëá
+;
+
+263 
+™em
+ < 
+theP¬’t
+->
+right
+->
+–em’t
+ ?
+
+264 
+	`rÙ©eW™hLeáChžd
+Ð
+theP¬’t
+->
+right
+ ) :
+
+265 
+	`rÙ©eW™hRightChžd
+Ð
+theP¬’t
+->
+right
+ );
+
+266  
+theP¬’t
+->
+right
+;
+
+268 
+	}
+}
+
+270 
+	$rÙ©eW™hLeáChžd
+Ð
+RedBÏckNode
+ * & 
+k2
+ )
+
+272 
+RedBÏckNode
+ *
+k1
+ = 
+k2
+->
+Ëá
+;
+
+273 
+k2
+->
+Ëá
+ = 
+k1
+->
+right
+;
+
+274 
+k1
+->
+right
+ = 
+k2
+;
+
+275 
+k2
+ = 
+k1
+;
+
+276 
+	}
+}
+
+278 
+	$rÙ©eW™hRightChžd
+Ð
+RedBÏckNode
+ * & 
+k1
+ )
+
+280 
+RedBÏckNode
+ *
+k2
+ = 
+k1
+->
+right
+;
+
+281 
+k1
+->
+right
+ = 
+k2
+->
+Ëá
+;
+
+282 
+k2
+->
+Ëá
+ = 
+k1
+;
+
+283 
+k1
+ = 
+k2
+;
+
+284 
+	}
+}
+
+	@
+1
+.
+1
+/usr/include
+1
+15
+RedBlackTree.h

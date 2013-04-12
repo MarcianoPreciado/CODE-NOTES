@@ -149,7 +149,7 @@ private:
     } else if ( t->element < x ) {
       insert( x, t->right );
     } else {
-      ;  // Duplicate; do nothing
+      //      ;  // Duplicate; do nothing
     }
   }
 
@@ -168,6 +168,8 @@ private:
     } else if ( t->element < x ) {
       remove( x, t->right );
     } else if ( t->left != NULL && t->right != NULL ) { // Two children
+      // 如果二叉树中的某个节点有两个子女，则其后继没有左子女，其前趋没有右子
+      // 女
       t->element = findMin( t->right )->element;
       remove( t->element, t->right );
     } else {
@@ -196,6 +198,7 @@ private:
    * Return node containing the largest item.
    */
   BinaryNode * findMax( BinaryNode *t ) const {
+
     if ( t != NULL )
       while ( t->right != NULL ) {
         t = t->right;
@@ -257,28 +260,25 @@ private:
   //  }
 
   void printTree( BinaryNode *t, ostream &out) const {
+    //  将vector当作栈来实现，push_back,pop_back,back
     vector<BinaryNode *> stackList;
     while (t != NULL || !stackList.empty()) {
       while (t != NULL) {
         stackList.push_back(t);
         t = t->left;
       }
-      if (!stackList.empty()) {
-        t = stackList.back();
-        stackList.pop_back();
-        out << t->element << "\t";
-        t = t->right;
-      }
+      t = stackList.back();
+      stackList.pop_back();
+      out << t->element << "\t";
+      t = t->right;
     }
   }
-
-
 
   /**
    * Internal method to clone subtree.
    */
   BinaryNode * clone( BinaryNode *t ) const {
-    if ( t == NULL ) {
+    if ( t == NULL) {
       return NULL;
     } else {
       return new BinaryNode( t->element, clone( t->left ), clone( t->right ) );
